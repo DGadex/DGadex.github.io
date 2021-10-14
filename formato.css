@@ -2,8 +2,12 @@ h1 {color:green;}
 #Prueba1 {color:red;}
 .F1 {color:yellow;}
 .F2 {color:red;}
- b {color:green;}
- bb {color:blue;}
- bbb {color:yellow;}
+
+#Clase1
+b {color:green;}
+#Clase2  
+b {color:blue;}
+#Clase3  
+b {color:yellow;}
 
 
