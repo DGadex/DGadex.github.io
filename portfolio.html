@@ -1,72 +1,346 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--
+	Author by FreeHTML5.co
+	Twitter: https://twitter.com/fh5co
+	Facebook: https://fb.com/fh5co
+	URL: https://freehtml5.co
+-->
+<html lang="en">
 <head>
-<title> DGadex's Portfolio </title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<title>Author</title>
 </head>
 <body>
-<h1 style = "font-family: Helvetica; color:#fcba03">Esta es mi página web, mi humilde morada</h1>
-	<p>Siéntete como en tu propia casa. pasa, pasa. No te preocupes por manchar la alfombra, luego lo limpio.</p>
-	<p>Seguramente ha sido un largo viaje entre páginas y más páginas web. Ven y descansa al lado de la chimenea. Cuéntame cómo ha sido tu aventura hasta ahora. </br> Si no te apetece, puedes hacer clic <a href = "https://youtu.be/dQw4w9WgXcQ"> aquí</a> para relajarte un poco.</p>
-<h2 style = "font-family: Helvetica; color:#fcba03">Tómate tu tiempo, tengo todo el día :)</h2>
-	<p align = "right">Ven, acércate más, déjame contarte una pequeña historia</p> 
-	<p align = "center">Venga que no muerdo.</p> 
-	<p align = "left">Ahora mejor, ¿no crees? </br>Te voy a contar una pequeña historia.</p>
-<h3 style = "font-family: Helvetica; color:#fcba03">Esta es la historia:</h3>
-	<p> Pensándolo mejor, no quiero entretenerte mucho. Hagamos una tabla, ¿a quién no le gustan las tablas? </p>
-	<table border = "2px">
 
-		<tr>
-			<td>Fíjate bien </td>
-			<td>Que bonitas </td> 
-			<td>Son las tablas </td>
-		</tr>
+	<!-- Navigation -->
+	<nav class="site-navigation">
+		<div class="site-navigation-inner site-container">
+			<img src="./images/site-logo.png" alt="site logo">
+			<div class="main-navigation">
+				<ul class="main-navigation__ul">
+					<li><a href="#">Homepage</a></li>
+					<li><a href="#">Page 1</a></li>
+					<li><a href="#">Page 2</a></li>
+					<li><a href="#">Page 3</a></li>
+					<li><a href="#">Page 4</a></li>
+				</ul>
+			</div>
+			<div id="myBtn" class="burger-container" onclick="myFunction(this)">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+			<script>
+				function myFunction(x) {
+					x.classList.toggle("change");
+				}
+			</script>
 
-		<tr>
-			<td>Cada fila </td>
-			<td>Y columna </td> 
-			<td>Es como un mundo</td>
-		</tr>
+		</div>
+	</nav>
+	<!-- Navigation end -->
 
-		<tr>
-			<td> Y a veces </td>
-			<td rowspan = "2">Los mundos se comen a otros </td> 
-		</tr>
-		
-		<tr>
-			<td> A veces de una manera </td>
-			<td colspan = "2">Y a veces de otra </td> 
-		</tr>
-		<tfoot bgcolor = "Red">
-		<tr>
-			<td> Mira mira, </td>
-			<td colspan = "2">Hasta cambian de color </td> 
-		</tr>
-		</tfoot>
-		
+	<!-- Top banner -->
+	<section class="fh5co-top-banner">
+		<div class="top-banner__inner site-container">
+			<div class="top-banner__image">
+				<img src="./images/top-banner-author.jpg" alt="author image">
+			</div>
+			<div class="top-banner__text">
+				<div class="top-banner__text-up">
+					<span class="brand-span">Hola! Soy</span>
+					<h2 class="top-banner__h2">Edward</h2>
+				</div>
+				<div class="top-banner__text-down">
+					<h2 class="top-banner__h2">Mena</h2>
+					<span class="brand-span">Gamer</span>
+				</div>
+				<p>One Man. One Mission. Can He Go Beyond?One Man. One Mission. Can He Go Beyond?</p>
+				<a href="#" class="brand-button">Read bio > </a>
+			</div>
+		</div>
+	</section>
+	<!-- Top banner end -->
 
-	</table>
-	
-	<div id = "rojo" style = "background-color: red;">  
-	<p> Seguramente te hayas cansado con esa tabla. Uy, ahora está en rojo el fondo. Creo que esta página tiene vida propia.</p>
+	<!-- About me -->
+	<section class="fh5co-about-me">
+		<div class="about-me-inner site-container">
+			<article class="portfolio-wrapper">
+				<div class="portfolio__img">
+					<img src="./images/about-me.jpg" class="about-me__profile" alt="about me profile picture">
+				</div>
+				<div class="portfolio__bottom">
+					<div class="portfolio__name">
+						<span>J</span>
+						<h2 class="universal-h2">hone Smith</h2>
+					</div>
+					<p>Jhone Smith is a short story author, novelist, and award-winning poet.</p>
+				</div>
+			</article>
+			<div class="about-me__text">
+				<div class="about-me-slider">
+					<div class="about-me-single-slide">
+						<h2 class="universal-h2 universal-h2-bckg">About me</h2>
+						<p><span>H</span> e has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and the British Fantasy Society journal Dark Horizons. He is also CEO of a company, specializing in custom book publishing and social media marketing services, have created a community for authors to learn and connect.He has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and have created a community for authors to learn and connect.</p>
+						<h4>Author</h4>
+						<p class="p-white">See me</p>
+					</div>
+					<div class="about-me-single-slide">
+						<h2 class="universal-h2 universal-h2-bckg">About me 2</h2>
+						<p><span>H</span> e has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and the British Fantasy Society journal Dark Horizons. He is also CEO of a company, specializing in custom book publishing and social media marketing services, have created a community for authors to learn and connect.He has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and have created a community for authors to learn and connect.</p>
+						<h4>Author</h4>
+						<p class="p-white">See me</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="about-me-bckg"></div>
+	</section>
+	<!-- About me end -->
+
+	<!-- Books and CD -->
+	<section class="fh5co-books">
+		<div class="site-container">
+			<h2 class="universal-h2 universal-h2-bckg">New Books And CD</h2>
+			<div class="books">
+				<div class="single-book">
+					<a href="#" class="single-book__img">
+						<img src="./images/books-1.jpg" alt="single book and cd">
+						<div class="single-book_download">
+							<img src="./images/download.svg" alt="book image">
+						</div>
+					</a>
+					<h4 class="single-book__title">Olivani</h4>
+					<span class="single-book__price">$15.00</span>
+					<!-- star rating -->
+					<div class="rating">
+						<span>&#9734;</span>
+						<span>&#9734;</span>
+						<span>&#9734;</span>
+						<span>&#9734;</span>
+						<span>&#9734;</span>
+					</div>
+					<!-- star rating end -->
+				</div>
+				<div class="single-book">
+					<a href="#" class="single-book__img">
+						<img src="./images/books-2.jpg" alt="single book and cd">
+						<div class="single-book_download">
+							<img src="./images/download.svg" alt="book image">
+						</div>
+					</a>
+					<h4 class="single-book__title">Molleon’s Life</h4>
+					<span class="single-book__price">$22.00</span>
+					<!-- star rating -->
+					<div class="rating">
+						<span>&#9734;</span>
+						<span>&#9734;</span>
+						<span>&#9734;</span>
+						<span>&#9734;</span>
+						<span>&#9734;</span>
+					</div>
+					<!-- star rating end -->
+				</div>
+				<div class="single-book">
+					<a href="#" class="single-book__img">
+						<img src="./images/books-3.jpg" alt="single book and cd">
+						<div class="single-book_download">
+							<img src="./images/download.svg" alt="book image">
+						</div>
+					</a>
+					<h4 class="single-book__title">Love is Love</h4>
+					<span class="single-book__price">$25.00</span>
+				</div>
+				<div class="single-book">
+					<a href="#" class="single-book__img">
+						<img src="./images/books-4.jpg" alt="single book and cd">
+						<div class="single-book_download">
+							<img src="./images/download.svg" alt="book image">
+						</div>
+					</a>
+					<h4 class="single-book__title">Give Me Also</h4>
+					<span class="single-book__price">$30.00</span>
+				</div>
+			</div>
+			<div class="books-brand-button">
+				<a href="#" class="brand-button">View more</a>
+			</div>
+		</div>
+	</section>
+	<!-- Books and CD end -->
+
+	<!-- Counter -->
+	<div class="fh5co-counter counters">
+		<div class="counter-inner site-container">
+			<div class="single-count">
+				<span class="count" data-count="50">0</span>
+				<div class="single-count__text">
+					<img src="./images/counter-1.png" alt="counter icon">
+					<p>Books</p>
+				</div>
+			</div>
+			<div class="single-count">
+				<span class="count" data-count="600">0</span>
+				<div class="single-count__text">
+					<img src="./images/counter-2.png" alt="counter icon">
+					<p>Pages</p>
+				</div>
+			</div>
+			<div class="single-count">
+				<span class="count" data-count="2000">0</span>
+				<div class="single-count__text">
+					<img src="./images/counter-3.png" alt="counter icon">
+					<p>Sales</p>
+				</div>
+			</div>
+			<div class="single-count">
+				<span class="count" data-count="125">0</span>
+				<div class="single-count__text">
+					<img src="./images/counter-4.png" alt="counter icon">
+					<p>Awards</p>
+				</div>
+			</div>
+		</div>
 	</div>
-	
-	<p> Vale, creo que tengo control otra vez de la página. Déjame probar. <span style = "background: blue; color: white;"> Esto está escrito diferente! </span> Esto ya no.</br> A lo que iba, ten aquí una foto para amenizar el ambiente :D. </p>
-	<img src="https://static2.abc.es/media/noticias/2020/12/07/chimenea-netflix-k6GI--1200x630@abc.jpg" height = "50%" width = "50%"/>
+	<!-- Counter -->
 
+	<!-- Blog -->
+	<section class="fh5co-blog">
+		<div class="site-container">
+			<h2 class="universal-h2 universal-h2-bckg">My Blog</h2>
+			<div class="blog-slider blog-inner">
+				<div class="single-blog">
+					<div class="single-blog__img">
+						<img src="./images/blog1.jpg" alt="blog image">
+					</div>
+					<div class="single-blog__text">
+						<h4>The Journey Under the Waves</h4>
+						<span>On August 28, 2015</span>
+						<p>Quisque vel sapi nec lacus adipis cing bibendum nullam porta lites laoreet aliquam.velitest, tempus a ullamcorper et, lacinia mattis mi. Cras arcu nulla, blandit id cursus et, ultricies eu leo.</p>
+					</div>
+				</div>
+				<div class="single-blog">
+					<div class="single-blog__img">
+						<img src="./images/blog2.jpg" alt="blog image">
+					</div>
+					<div class="single-blog__text">
+						<h4>The Journey Under the Waves</h4>
+						<span>On August 28, 2015</span>
+						<p>Quisque vel sapi nec lacus adipis cing bibendum nullam porta lites laoreet aliquam.velitest, tempus a ullamcorper et, lacinia mattis mi. Cras arcu nulla, blandit id cursus et, ultricies eu leo.</p>
+					</div>
+				</div>
+				<div class="single-blog">
+					<div class="single-blog__img">
+						<img src="./images/blog2.jpg" alt="blog image">
+					</div>
+					<div class="single-blog__text">
+						<h4>The Journey Under the Waves</h4>
+						<span>On August 28, 2015</span>
+						<p>Quisque vel sapi nec lacus adipis cing bibendum nullam porta lites laoreet aliquam.velitest, tempus a ullamcorper et, lacinia mattis mi. Cras arcu nulla, blandit id cursus et, ultricies eu leo.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog end -->
 
-	<p> ¿Te ha gustado la chimenea? Vale, ahora si que voy a contarte una historia; la mía. Seré sencillo y te hablaré de: </p>
-<ul>
+	<!-- Quotes -->
+	<section class="fh5co-quotes">
+		<div class="site-container">
+			<div class="about-me-slider">
+				<div>
+					<h2 class="universal-h2 universal-h2-bckg">What People Are Saying</h2>
+					<p>“Pudding croissant cake candy canes fruitcake sweet roll pastry gummies sugar plum. Tart pastry danish soufflé donut bear claw chocolate cake marshmallow chupa chups. Jelly danish gummi bears cake donut powder chocolate cake. Bonbon soufflé lollipop biscuit dragée jelly-o. Wafer pastry pudding tiramisu chocolate bar croissant cake. Pie caramels gummies danish.”</p>
+					<img src="./images/quotes.svg" alt="quotes svg">
+					<h4>David Dixon</h4>
+					<p>Reader</p>
+				</div>
+				<div>
+					<h2 class="universal-h2 universal-h2-bckg">What People Are Saying 2</h2>
+					<p>“Pudding croissant cake candy canes fruitcake sweet roll pastry gummies sugar plum. Tart pastry danish soufflé donut bear claw chocolate cake marshmallow chupa chups. Jelly danish gummi bears cake donut powder chocolate cake. Bonbon soufflé lollipop biscuit dragée jelly-o. Wafer pastry pudding tiramisu chocolate bar croissant cake. Pie caramels gummies danish.”</p>
+					<img src="./images/quotes.svg" alt="quotes svg">
+					<h4>David Dixon</h4>
+					<p>Reader</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Quotes end -->
 
-<li> Barcelona</li>
-<li> Mi primer videojuego</li>
-<li> Qué me gusta hacer </li>
+	<!-- Social -->
+	<section class="fh5co-social">
+		<div class="site-container">
+			<div class="social">
+				<h5>Follow me!!</h5>
+				<div class="social-icons">
+					<a href="#" target="_blank"><img src="./images/social-twitter.png" alt="social icon"></a>
+					<a href="#" target="_blank"><img src="./images/social-pinterest.png" alt="social icon"></a>
+					<a href="#" target="_blank"><img src="./images/social-youtube.png" alt="social icon"></a>
+					<a href="#" target="_blank"><img src="./images/social-twitter.png" alt="social icon"></a>
+				</div>
+				<h5>Share it!</h5>
+			</div>
+		</div>
+	</section>
+	<!-- Social -->
 
-</ul>
+	<!-- Footer -->
+	<footer class="site-footer">
+		<div class="site-container">
+			<div class="footer-inner">
+				<div class="footer-info">
+					<div class="footer-info__left">
+						<img src="./images/footer-img.jpg" alt="about me image">
+						<p>Read more about me</p>
+					</div>
+					<div class="footer-info__right">
+						<h5>Get In Touch</h5>
+						<p class="footer-phone">Phone: +958734902847</p>
+						<p>Email : Jhone@Example.com</p>
+						<div class="social-icons">
+							<a href="#" target="_blank"><img src="./images/social-twitter.png" alt="social icon"></a>
+							<a href="#" target="_blank"><img src="./images/social-pinterest.png" alt="social icon"></a>
+							<a href="#" target="_blank"><img src="./images/social-youtube.png" alt="social icon"></a>
+							<a href="#" target="_blank"><img src="./images/social-twitter.png" alt="social icon"></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-contact-form">
+					<h5>Contact Form</h5>
+					<form class="contact-form">
+						<div class="contact-form__input">
+							<input type="text" name="name" placeholder="Name">
+							<input type="email" name="email" placeholder="Email">
+						</div>
+						<textarea></textarea>
+						<input type="submit" name="submit" value="Submit" class="submit-button">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="site-container footer-bottom-inner">
+				<p>© 2019 Author | Design by <a href="https://freehtml5.co/" target="_blank">freehtml5.co</a> | All rights Reserved.</p>
+				<div class="footer-bottom__img">
+					<img src="./images/footer-mastercard.png" alt="footer image">
+					<img src="./images/footer-paypal.png" alt="footer image">
+					<img src="./images/footer-visa.png" alt="footer image">
+					<img src="./images/footer-fedex.png" alt="footer image">
+					<img src="./images/footer-dhl.png" alt="footer image">
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer end -->
 
-	<p> Verás: Antes de venir a la Uji vivía en Barcelona, Catalunya. Hice la ESO y Bachiller tecnológico en el Sagrat Cor Diputació (decir ese nombre me trae muchas sensaciones encontradas.). </br> Allí tuve que hacer un trabajo de investigación (Treball de Recerca), el cual enfoqué en los videojuegos y varias cosas relacionadas con ellos. Así fue como hice mi primer juego. </br> Si pinchas <a href = "https://youtu.be/2vINzd00nNU"> aquí</a> verás un pequeño gameplay de lo que hice. Lo sé, es simple pero por algo se empieza, ¿no? </p>
-	<p> Y sobre mi... Diría que tengo varias aficiones. Los videojuegos (es casi que obvio), la música (allá por donde voy la música va conmigo de la mano), la cocina (gracias mamá) y los libros y series. Lo esencial, diría yo. </p>
-	<p> Y eso es todo. Podría pasarme el resto del día hablando, pero no quiero hacerte perder más tiempo. </p>
-<h3 style = "font-family: Helvetica; color:#fcba03"> Prosigue con tu viaje, buena suerte :) </h3>
+	<!-- Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/main.js"></script>
 
 </body>
 </html>
