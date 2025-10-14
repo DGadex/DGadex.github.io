@@ -1,3 +1,6 @@
+
+
+
 "use strict";
 
 const canvas = document.getElementsByTagName("canvas")[0];
