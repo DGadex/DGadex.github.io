@@ -1,195 +1,191 @@
-<!DOCTYPE HTML>
-<!--
-	Telephasic by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Edward Mena | Formula Student</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="left-sidebar is-preload">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edward Mena | Formula Student</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<div id="header" class="container">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'g-black': '#0a0a0a',
+                        'g-dark': '#111111',
+                        'g-card': '#1a1a1a',
+                        'g-gold': '#D4AF37',
+                        'g-red': '#C41E3A',
+                        'g-gray': '#888888'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-g-red selection:text-white bg-g-black text-white">
 
-						<!-- Logo -->
-							<h1 id="logo"><a href="index.html">DGädex</a></h1>
+    <!-- NAV BAR -->
+    <nav class="fixed w-full z-50 transition-all duration-300 py-3 px-6 md:px-12 backdrop-blur-md bg-black/70 border-b border-white/5" id="navbar">
+        <div class="max-w-screen-2xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="block hover:opacity-80 transition-opacity">
+                <img src="images/LogoCorporativo-W.png" alt="DGadex Logo" class="h-10 w-auto object-contain">
+            </a>
+            <div class="hidden md:flex gap-8 text-xs font-bold tracking-[0.2em] uppercase text-gray-300">
+                <a href="index.html#about" class="hover:text-g-gold transition-colors py-2">About</a>
+                <a href="index.html#projects" class="hover:text-g-gold transition-colors py-2">Projects</a>
+                <a href="#" class="text-g-red py-2 cursor-default border-b-2 border-g-red">Formula Student</a>
+                <a href="index.html#contact" class="hover:text-g-gold transition-colors py-2">Contact</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-g-dark border-b border-white/10 p-4 flex flex-col gap-4 text-center shadow-2xl">
+            <a href="index.html#about" class="text-sm font-bold uppercase tracking-widest hover:text-g-gold">About</a>
+            <a href="index.html#projects" class="text-sm font-bold uppercase tracking-widest hover:text-g-gold">Projects</a>
+            <a href="#" class="text-sm font-bold uppercase tracking-widest text-g-red">Formula Student</a>
+            <a href="index.html#contact" class="text-sm font-bold uppercase tracking-widest hover:text-g-gold">Contact</a>
+        </div>
+    </nav>
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li>
-										<a href="#">ㅤ</a>
-										<!--<ul>
-											<li><a href="#">Lorem ipsum dolor</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li><a href="#">Etiam dolore nisl</a></li>
-											<li>
-												<a href="#">Phasellus consequat</a>
-												<ul>
-													<li><a href="#">Lorem ipsum dolor</a></li>
-													<li><a href="#">Phasellus consequat</a></li>
-													<li><a href="#">Magna phasellus</a></li>
-													<li><a href="#">Etiam dolore nisl</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Veroeros feugiat</a></li>
-										</ul>-->
-									</li>
-									<li><a href="formula-student.html">Formula Student</a></li>
-									<li class="break"><a href="index.html">Game Develop</a></li>
-									<li><a href="index.html">My Socials</a></li>
-								</ul>
-							</nav>
+    <!-- HERO SECTION -->
+    <header class="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
+        <div id="canvas-container" class="no-filter">
+            <canvas id="raceCanvas"></canvas>
+        </div>
+        <div class="hero-overlay pointer-events-none"></div>
+        <div class="hero-content text-center px-4 z-20">
+            <div class="mb-4 inline-block border border-g-red/50 bg-g-red/10 px-4 py-1 rounded-full backdrop-blur-sm reveal">
+                <span class="text-g-red text-xs font-bold tracking-[0.2em] uppercase">Engineering & Performance</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-serif font-bold text-white mb-6 leading-tight reveal delay-100">
+                UJIMOTORSPORT <br> <span class="text-outline italic">FS TEAM</span>
+            </h1>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base tracking-wide reveal delay-200">
+                Where passion meets precision. Designing the future of racing aerodynamics.
+            </p>
+        </div>
+    </header>
 
-					</div>
-				</div>
+    <!-- TEAM INTRO -->
+    <section class="py-24 px-6 relative">
+        <div class="max-w-screen-2xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">More than a <span class="text-g-gold">Competition</span></h2>
+                <div class="h-1 w-20 bg-g-gold mb-8"></div>
+                <p class="text-gray-300 leading-loose mb-6 text-lg">
+                    The Formula Student world has marked a definitive before and after in my life. It's not just about building a car; it's about pushing limits, teamwork under pressure, and engineering excellence.
+                </p>
+                <div class="flex items-center gap-6 mt-8">
+                    <img src="images/Logo_UJIMOTORSPORT.png" alt="Logo" class="h-16 opacity-80">
+                    <a href="https://www.ujimotorsport.uji.es" target="_blank" class="text-g-red font-bold uppercase tracking-widest text-xs hover:text-white transition-colors border-b border-g-red pb-1">
+                        Visit Team Website <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="reveal delay-200 relative">
+                <div class="absolute -inset-4 bg-g-gold/5 rounded-lg -z-10 transform rotate-2"></div>
+                <div class="glass-panel p-2">
+                    <img src="images/FSS-photo.jpg" alt="Team Photo" class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- Main -->
-				<div class="wrapper">
-					<div class="container" id="main">
-						<div class="row gtr-150">
-							<div class="col-4 col-12-narrower">
+    <!-- THE JOURNEY (Timeline Creativa) -->
+    <section class="py-24 bg-g-dark relative overflow-hidden">
+        <!-- Línea central decorativa -->
+        <div class="timeline-line hidden md:block"></div>
 
-								<!-- Sidebar -->
-									<section id="sidebar">
-										<section>
-											<header>
-												<h3>UJIMotosport</h3>
-											</header>
-											<a href="#" class="image featured"><img src="images/Logo_UJIMOTORSPORT.png" alt="" /></a>
-											<p>Formula Student team located in Castellon de la Plana, Spain. Representing Universitat Jaume I.</p>
-											<ul class="actions">
-												<li><a href="https://www.ujimotorsport.uji.es" class="button">Team's Website</a></li>
-											</ul>
-										</section>
-										<section>
-											<a href="#" class="image "><img src="images/FSS-photo.jpg" alt="" /></a>
-											<header>
-												<h3>More than just a competition</h3>
-											</header>
-											<p>The Formula Student world has made a great before and after in my life. Thanks to it, I have grown a lot in broad areas, personally and profesionally speaking. While my jorney in this world came to and end, I keep with me all the memories, knowledge, achivements, and friends I made along the way. </p>
-										</section>
-									</section>
+        <div class="max-w-screen-xl mx-auto px-6 relative z-10 space-y-24">
+            
+            <!-- 2023: The Beginning -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal">
+                <div class="md:text-right order-2 md:order-1">
+                    <span class="text-6xl font-serif font-bold text-white absolute -top-10 right-10 md:right-1/2 md:mr-12 select-none">2023</span>
+                    <h3 class="text-2xl font-bold text-white mb-4 relative">The Beginning</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Joined the team in late 2023 during the <strong>UFS06 design phase</strong>. I entered the <strong>Aerodynamics department</strong>, where I worked with <strong>Solidworks</strong> and <strong>StarCCM+</strong> to design and optimize the formula's aero package.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="glass-panel p-1 transform md:-translate-x-8 hover:scale-105 transition-transform duration-500">
+                        <img src="images/picUFS06.JPG" alt="UFS06 Design" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+            </div>
 
-							</div>
-							<div class="col-8 col-12-narrower imp-narrower">
+            <!-- 2024: Manufacturing & Victory -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal">
+                <div class="order-1">
+                    <div class="glass-panel p-1 transform md:translate-x-8 hover:scale-105 transition-transform duration-500">
+                        <img src="images/winnersfspt.jpg" alt="Winners 2024" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+                <div class="order-2">
+                    <span class="text-6xl font-serif font-bold text-white absolute -top-20 left-20 md:left-1/2 md:mr-12 select-none">2024</span>
+                    <h3 class="text-2xl font-bold text-white mb-4 relative">Manufacturing & Victory</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Later in the season, I worked hands-on manufacturing the package using composites like <strong>Carbon Fiber via Lamination</strong>. In summer '24, we faced reliability issues at <strong>Formula Student Spain (P14)</strong>, but bounced back stronger to take <strong>1st Place Overall</strong> at <strong>Formula Student Portugal</strong>.
+                    </p>
+                </div>
+            </div>
 
-								<!-- Content -->
-									<article id="content">
-										<header>
-											<h2>Formula Student</h2>
-											<p>Motorsport has always been one of my passions since I was little. Now thanks to Universitat Jaume I, I could take part in one of the most popular motorsport competitions for young talents and colleges</p>
-										</header>
-										<a href="#" class="image"><img src="images/picUFS06.JPG" alt="" /></a>
-										<p>Joined the team in late 2023, when the UFS06 was being designed. I got in the aerodynamics department. From here, I got to work with Solidworks and StarCCMM+ to design and optimize the aero package of the formula. Later in the season, we got to manufacture the package using composites such as Carbon Fiber via Lamination. Then, in the summer of '24,
-											we competed in the Formula Student Spain, where we faced some reliability issues and ended p14. Later we competed in
-											Formula Student Portugal, where we took first place overall. Then for the next season, we improved in many areas inside our department, thus optimizing the
-										design and optimization process. Then, we also managed to improve the final product, reducing the overall weight of the aero package. In the summer of 2025,
-										the team competed in Formula Student Portugal, where we ended P3 overall, and Formula Student Spain, where we got a better result than the previous year, a bittersweet P7 overall.</p>
-									</article>
+            <!-- 2025: Optimization -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal">
+                <div class="md:text-right order-2 md:order-1">
+                    <span class="text-6xl font-serif font-bold text-white absolute -top-10 right-10 md:right-1/2 md:mr-12 select-none">2025</span>
+                    <h3 class="text-2xl font-bold text-white mb-4 relative">Optimization & Lead</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        For the next season, we improved our department's processes, optimizing the design and reducing the aero package's overall weight. In summer 2025, we achieved a solid <strong>P3 Overall</strong> at Formula Student Portugal and a competitive <strong>P7 Overall</strong> at Formula Student Spain.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="glass-panel p-1 transform md:-translate-x-8 hover:scale-105 transition-transform duration-500">
+                        <img src="images/FSS25.JPG" alt="FSS 2025" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+            </div>
 
-							</div>
-						</div>
-						<div class="row features">
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper first">
-									<a href="#" class="image featured"><img src="images/winnersfspt.jpg" alt="" /></a>
-								</div>
-								<header>
-									<h3>Winners at FSPT 24</h3>
-								</header>
+        </div>
+    </section>
 
-							</section>
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/3rdfspt.jpg" alt="" /></a>
-								</div>
-								<header>
-									<h3>3rd overall at FSPT 25</h3>
-								</header>
+    <!-- ACHIEVEMENTS STATS -->
+    <section class="py-20 bg-g-black">
+        <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+            
+            <div class="achievement-card glass-panel p-8 text-center group border-t-4 border-g-gold">
+                <div class="text-g-gold text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-trophy"></i></div>
+                <h4 class="text-3xl font-serif font-bold text-white mb-2">1st Place</h4>
+                <p class="text-gray-500 text-xs uppercase tracking-widest">Formula Student Portugal '24</p>
+            </div>
 
-							</section>
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/FSS25.JPG" alt="" /></a>
-								</div>
-								<header>
-									<h3>P7 in FSS</h3>
-								</header>
+            <div class="achievement-card glass-panel p-8 text-center group border-t-4 border-white">
+                <div class="text-white text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-medal"></i></div>
+                <h4 class="text-3xl font-serif font-bold text-white mb-2">3rd Place</h4>
+                <p class="text-gray-500 text-xs uppercase tracking-widest">Formula Student Portugal '25</p>
+            </div>
 
-							</section>
-						</div>
-					</div>
-				</div>
+            <div class="achievement-card glass-panel p-8 text-center group border-t-4 border-g-red">
+                <div class="text-g-red text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-flag-checkered"></i></div>
+                <h4 class="text-3xl font-serif font-bold text-white mb-2">Top 7</h4>
+                <p class="text-gray-500 text-xs uppercase tracking-widest">Formula Student Spain '25</p>
+            </div>
 
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<div id="footer" class="container">
-						<header class="major">
-							<h2>Want to contact me?</h2>
-							<p>Here is my social profiles and a way to contact me, so we can embark on new exciting projects together!</p>
-						</header>
-						<div class="row">
-							<section class="col-6 col-12-narrower">
-								<form method="post" action="#">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-mobile">
-											<input name="name" placeholder="Name" type="text" />
-										</div>
-										<div class="col-6 col-12-mobile">
-											<input name="email" placeholder="Email" type="text" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" placeholder="Message"></textarea>
-										</div>
-										<div class="col-12">
-											<ul class="actions">
-												<li><input type="submit" value="Send Message" /></li>
-												<li><input type="reset" value="Clear form" /></li>
-											</ul>
-										</div>
-									</div>
-								</form>
-							</section>
-							<section class="col-6 col-12-narrower">
-								<div class="row gtr-0">
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-github"><a href="https://github.com/DGadex"><span class="extra">github.io/</span>DGadex</a></li>
-										<li class="icon brands fa-itch-io"><a href="https://dgadex.itch.io/"><span class="extra">itch.io/</span>DGädex</a></li>
-										<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/edward-alejandro-mena-ordoñez-aaa900311"><span class="extra">linkedin.com/in/</span>Edward Mena</a></li>
-									</ul>
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-instagram"><a href="https://www.instagram.com/dgadex_"><span class="extra">instagram.com/</span>dgadex_</a></li>
-										<li class="icon brands fa-instagram"><a href="https://www.instagram.com/gadex.avi"><span class="extra">instagram.com/</span>gadex.avi</a></li>
-										<li class="icon brands fa-youtube"><a href="https://www.youtube.com/@GadexR"><span class="extra">youtube.com/</span>GadexR</a></li>
-									</ul>
-								</div>
-							</section>
-						</div>
-					</div>
-					<div id="copyright" class="container">
-						<ul class="menu">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
-				</div>
+        </div>
+    </section>
 
-		</div>
+    <footer class="py-8 bg-black text-center border-t border-white/5">
+        <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2025 DGadex. All rights reserved.</p>
+    </footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <script src="assets/js/main.js"></script>
+</body>
 </html>
