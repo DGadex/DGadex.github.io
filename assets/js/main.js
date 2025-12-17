@@ -180,7 +180,102 @@ document.addEventListener('DOMContentLoaded', () => {
         animateRace();
     }
 
-    // --- 3. GIF PREVIEW & HOVER ---
+    // --- 3. EFECTO VFX PARTICLES (VFX PAGE) ---
+    const vfxCanvas = document.getElementById('vfxCanvas');
+    if (vfxCanvas) {
+        const ctx = vfxCanvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        const particleCount = 60; // More particles for magic effect
+
+        function resizeVFX() {
+            width = vfxCanvas.width = window.innerWidth;
+            height = vfxCanvas.height = window.innerHeight;
+        }
+
+        class MagicParticle {
+            constructor() {
+                this.reset();
+                this.y = Math.random() * height; // Start anywhere
+            }
+
+            reset() {
+                this.x = Math.random() * width;
+                this.y = height + Math.random() * 100; // Start below
+                this.speed = Math.random() * 1 + 0.5; 
+                this.size = Math.random() * 3 + 1;
+                this.life = Math.random() * 100 + 50;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.wobble = Math.random() * Math.PI * 2;
+                
+                // Purple and Gold palette for Magic
+                const colors = [
+                    '142, 68, 173',  // Purple
+                    '212, 175, 55',  // Gold
+                    '155, 89, 182',  // Light Purple
+                    '255, 255, 255'  // White
+                ];
+                this.colorRGB = colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            update() {
+                this.y -= this.speed;
+                this.wobble += 0.05;
+                this.x += Math.sin(this.wobble) * 0.5;
+                this.life--;
+                
+                if(this.life < 0 || this.y < -50) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                // Fade out as they go up or die
+                const alpha = Math.min(this.opacity, this.life / 50);
+                
+                ctx.fillStyle = `rgba(${this.colorRGB}, ${alpha})`;
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = `rgba(${this.colorRGB}, 0.8)`;
+                
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                ctx.shadowBlur = 0; // Reset for performance
+            }
+        }
+
+        function initVFX() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new MagicParticle());
+            }
+        }
+
+        function animateVFX() {
+            ctx.fillStyle = 'rgba(10, 10, 10, 0.1)'; // Trail effect
+            ctx.fillRect(0, 0, width, height);
+            
+            // Composite operation for glowing effect
+            ctx.globalCompositeOperation = 'lighter';
+            
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            
+            ctx.globalCompositeOperation = 'source-over';
+            requestAnimationFrame(animateVFX);
+        }
+
+        window.addEventListener('resize', () => { resizeVFX(); initVFX(); });
+        
+        resizeVFX();
+        initVFX();
+        animateVFX();
+    }
+
+    // --- 4. GIF PREVIEW & HOVER ---
     const projectCards = document.querySelectorAll('.project-card');
     
     projectCards.forEach(card => {

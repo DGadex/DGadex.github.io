@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edward Mena | Game Designer & VFX Artist</title>
     <meta name="description" content="Portfolio of Edward Mena - Game Designer, VFX Artist & Technical Designer">
-    
+
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
 
     <!-- Tu CSS Personalizado (Local) -->
     <link rel="stylesheet" href="assets/css/main.css">
@@ -41,20 +44,23 @@
         }
     </script>
 </head>
+
 <body class="antialiased selection:bg-g-red selection:text-white">
 
     <!-- NAV BAR -->
-    <nav class="fixed w-full z-50 transition-all duration-300 py-3 px-6 md:px-12 backdrop-blur-md bg-black/70 border-b border-white/5" id="navbar">
+    <nav class="fixed w-full z-50 transition-all duration-300 py-3 px-6 md:px-12 backdrop-blur-md bg-black/70 border-b border-white/5"
+        id="navbar">
         <div class="max-w-screen-2xl mx-auto flex justify-between items-center">
             <!-- LOGO -->
             <a href="#" class="block hover:opacity-80 transition-opacity">
                 <img src="images/LogoCorporativo-W.png" alt="DGadex Logo" class="h-10 w-auto object-contain">
             </a>
-            
+
             <!-- Desktop Menu -->
             <div class="hidden md:flex gap-8 text-xs font-bold tracking-[0.2em] uppercase text-gray-300">
                 <a href="#about" class="hover:text-g-gold transition-colors py-2">About</a>
                 <a href="#projects" class="hover:text-g-gold transition-colors py-2">Projects</a>
+                <a href="vfx.html" class="hover:text-g-purple transition-colors py-2">VFX</a>
                 <a href="#formula" class="hover:text-g-red transition-colors py-2">Formula Student</a>
                 <a href="#contact" class="hover:text-g-gold transition-colors py-2">Contact</a>
             </div>
@@ -64,11 +70,13 @@
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        
+
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-g-dark border-b border-white/10 p-4 flex flex-col gap-4 text-center shadow-2xl">
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-g-dark border-b border-white/10 p-4 flex flex-col gap-4 text-center shadow-2xl">
             <a href="#about" class="text-sm font-bold uppercase tracking-widest hover:text-g-gold">About</a>
             <a href="#projects" class="text-sm font-bold uppercase tracking-widest hover:text-g-gold">Projects</a>
+            <a href="vfx.html" class="text-sm font-bold uppercase tracking-widest hover:text-g-purple">VFX</a>
             <a href="#formula" class="text-sm font-bold uppercase tracking-widest hover:text-g-gold">Formula Student</a>
             <a href="#contact" class="text-sm font-bold uppercase tracking-widest hover:text-g-gold">Contact</a>
         </div>
@@ -79,24 +87,29 @@
         <div id="canvas-container">
             <canvas id="fluidCanvas"></canvas>
         </div>
-        
+
         <div class="hero-overlay pointer-events-none"></div>
 
         <div class="hero-content text-center px-4 max-w-5xl mx-auto mt-12 pointer-events-none select-none z-20">
-            <p class="text-g-gold text-xs md:text-sm tracking-[0.4em] uppercase mb-6 animate-fade-in-down">Welcome to my Portfolio</p>
+            <p class="text-g-gold text-xs md:text-sm tracking-[0.4em] uppercase mb-6 animate-fade-in-down">Welcome to my
+                Portfolio</p>
             <h1 class="text-5xl md:text-7xl lg:text-9xl font-serif font-bold text-white mb-4 leading-tight">
                 EDWARD <br> <span class="text-outline">MENA</span>
             </h1>
             <div class="h-1 w-24 bg-g-red mx-auto my-8"></div>
             <p class="text-gray-300 max-w-2xl mx-auto mb-10 text-sm md:text-lg leading-relaxed font-light">
-                Aspiring <span class="text-white font-medium">Game Designer</span> | <span class="text-white font-medium">VFX Artist</span> | <span class="text-white font-medium">Technical Designer</span>
+                Aspiring <span class="text-white font-medium">Game Designer</span> | <span
+                    class="text-white font-medium">VFX Artist</span> | <span class="text-white font-medium">Technical
+                    Designer</span>
             </p>
-            
+
             <div class="pointer-events-auto flex justify-center gap-4">
-                <a href="#projects" class="px-8 py-3 border border-g-gold text-g-gold text-xs font-bold tracking-widest uppercase hover:bg-g-gold hover:text-black transition-all duration-300">
+                <a href="#projects"
+                    class="px-8 py-3 border border-g-gold text-g-gold text-xs font-bold tracking-widest uppercase hover:bg-g-gold hover:text-black transition-all duration-300">
                     View Works
                 </a>
-                <a href="#contact" class="px-8 py-3 border border-transparent text-white text-xs font-bold tracking-widest uppercase hover:text-g-red transition-all duration-300">
+                <a href="#contact"
+                    class="px-8 py-3 border border-transparent text-white text-xs font-bold tracking-widest uppercase hover:text-g-red transition-all duration-300">
                     Get in Touch
                 </a>
             </div>
@@ -112,31 +125,42 @@
         <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div class="reveal order-2 md:order-1">
                 <p class="text-g-red text-xs font-bold tracking-widest uppercase mb-2">My Story</p>
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-8">About <span class="text-g-gold">Me</span></h2>
-                
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-8">About <span
+                        class="text-g-gold">Me</span></h2>
+
                 <div class="space-y-6 text-gray-400 leading-relaxed font-light">
                     <p>
-                        Hi! I'm <strong>Edward Mena</strong>, a student of Videogame Design and Development at Universitat Jaume I.
+                        Hi! I'm <strong>Edward Mena</strong>, a student of Videogame Design and Development at
+                        Universitat Jaume I.
                     </p>
                     <p>
-                        I’m passionate about creating interactive experiences that blend visual impact, technical precision, and meaningful design. My main interests lie in <strong>visual effects</strong> and <strong>technical design</strong>, and I aim to keep growing as a professional in the videogame industry.
+                        I’m passionate about creating interactive experiences that blend visual impact, technical
+                        precision, and meaningful design. My main interests lie in <strong>visual effects</strong> and
+                        <strong>technical design</strong>, and I aim to keep growing as a professional in the videogame
+                        industry.
                     </p>
                     <p>
-                        I also have a deep passion for motorsport, and my dream is to one day work at a videogame studio or racing simulator developer, where I can unite both worlds I love.
+                        I also have a deep passion for motorsport, and my dream is to one day work at a videogame studio
+                        or racing simulator developer, where I can unite both worlds I love.
                     </p>
                 </div>
 
                 <div class="mt-10">
-                    <a href="assets/EdwardMena_CV_EN.pdf" target="_blank" class="inline-flex items-center gap-3 text-white border-b border-g-red pb-1 hover:text-g-red transition-colors uppercase text-xs tracking-widest font-bold">
+                    <a href="assets/EdwardMena_CV_EN.pdf" target="_blank"
+                        class="inline-flex items-center gap-3 text-white border-b border-g-red pb-1 hover:text-g-red transition-colors uppercase text-xs tracking-widest font-bold">
                         <i class="fas fa-download"></i> Download CV
                     </a>
                 </div>
             </div>
 
             <div class="reveal order-1 md:order-2 relative group">
-                <div class="absolute inset-0 border-2 border-g-gold translate-x-4 translate-y-4 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
-                <div class="relative h-[500px] w-full bg-g-dark overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                    <img src="images/profile.png" alt="Edward Mena" class="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                <div
+                    class="absolute inset-0 border-2 border-g-gold translate-x-4 translate-y-4 transition-transform group-hover:translate-x-2 group-hover:translate-y-2">
+                </div>
+                <div
+                    class="relative h-[500px] w-full bg-g-dark overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <img src="images/profile.png" alt="Edward Mena"
+                        class="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                 </div>
             </div>
         </div>
@@ -145,203 +169,261 @@
     <!-- PROJECTS SECTION -->
     <section id="projects" class="py-24 bg-g-dark">
         <div class="max-w-screen-2xl mx-auto px-6">
-            
+
             <div class="text-center mb-16 reveal">
                 <p class="text-g-gold text-xs font-bold tracking-widest uppercase mb-3">Portfolio</p>
                 <h2 class="text-4xl md:text-5xl font-serif font-bold text-white">Completed Works</h2>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-                
+
                 <!-- Project 1: Goblinmancer -->
-                <article class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end">
+                <article
+                    class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end">
                     <!-- Image Container (NECESARIO PARA EL SCRIPT DE GIF) -->
                     <div class="image-container">
-                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10"></div>
-                        <img src="images/goblinmancer.png" 
-                             data-static="images/goblinmancer.png" 
-                             data-gif="images/goblinmancer.gif" 
-                             alt="Goblinmancer" 
-                             class="project-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
+                        </div>
+                        <img src="images/goblinmancer.png" data-static="images/goblinmancer.png"
+                            data-gif="images/goblinmancer.gif" alt="Goblinmancer" class="project-img">
                     </div>
-                    
+
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
-                             <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1 mr-2">Unity</span>
-                             <span class="text-white text-[10px] font-bold uppercase tracking-wider border border-white/30 px-2 py-1">VFX</span>
+                            <span
+                                class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1 mr-2">Unity</span>
+                            <span
+                                class="text-white text-[10px] font-bold uppercase tracking-wider border border-white/30 px-2 py-1">VFX</span>
                         </div>
-                        <h3 class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">Goblinmancer</h3>
-                        
-                        <p class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
+                        <h3
+                            class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">
+                            Goblinmancer</h3>
+
+                        <p
+                            class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
                             Turn-based Tower Defense where the player defends from goblins. Focus on VFX and graphics.
                         </p>
 
                         <div class="project-desc-overlay">
-                             <p class="text-gray-300 text-sm mb-6 leading-relaxed">
-                                Turn-based Tower Defense "spooky-themed" videogame. I mainly took part in the VFX and graphics creation and implementation. Made by the team Back to Bits in the Game Jam Jamsepticeye 25'.
+                            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                                Turn-based Tower Defense "spooky-themed" videogame. I mainly took part in the VFX and
+                                graphics creation and implementation. Made by the team Back to Bits in the Game Jam
+                                Jamsepticeye 25'.
                             </p>
                             <div class="flex gap-4">
-                                <a href="https://kiskidiego.itch.io/goblinmancer" target="_blank" class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i class="fas fa-play"></i> Play</a>
-                                <a href="https://youtu.be/EVdRs7xufN0" target="_blank" class="text-white hover:text-g-red text-sm font-bold uppercase tracking-wider"><i class="fab fa-youtube"></i> Video</a>
+                                <a href="https://kiskidiego.itch.io/goblinmancer" target="_blank"
+                                    class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i
+                                        class="fas fa-play"></i> Play</a>
+                                <a href="https://youtu.be/EVdRs7xufN0" target="_blank"
+                                    class="text-white hover:text-g-red text-sm font-bold uppercase tracking-wider"><i
+                                        class="fab fa-youtube"></i> Video</a>
                             </div>
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 2: Neon Rush -->
-                <article class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end" style="transition-delay: 100ms;">
+                <article
+                    class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end"
+                    style="transition-delay: 100ms;">
                     <div class="image-container">
-                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10"></div>
-                        <img src="images/NeonRushLogo.png" 
-                             data-static="images/NeonRushLogo.png" 
-                             data-gif="images/NeonRush.gif" 
-                             alt="Neon Rush" 
-                             class="project-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
+                        </div>
+                        <img src="images/NeonRushLogo.png" data-static="images/NeonRushLogo.png"
+                            data-gif="images/NeonRush.gif" alt="Neon Rush" class="project-img">
                     </div>
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
-                             <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1">Bachelor Thesis</span>
+                            <span
+                                class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1">Bachelor
+                                Thesis</span>
                         </div>
-                        <h3 class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">Neon Rush</h3>
-                        
-                        <p class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
+                        <h3
+                            class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">
+                            Neon Rush</h3>
+
+                        <p
+                            class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
                             Racing videogame with custom track builder. I handled VFX, post-process and physics.
                         </p>
 
                         <div class="project-desc-overlay">
-                             <p class="text-gray-300 text-sm mb-6 leading-relaxed">
-                                Racing videogame where the player can create its own tracks with the building tool. This is my Bachelor's thesis project. I took part in all the VFX, post-process, car behaviour and physics.
+                            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                                Racing videogame where the player can create its own tracks with the building tool. This
+                                is my Bachelor's thesis project. I took part in all the VFX, post-process, car behaviour
+                                and physics.
                             </p>
                             <div class="flex gap-4">
-                                <a href="https://github.com/DGadex/Neon-Rush-TFG" target="_blank" class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i class="fab fa-github"></i> Code</a>
-                                <a href="assets/Bachelor_Thesis_Edward_Mena.pdf" target="_blank" class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i class="fas fa-file-pdf"></i> Thesis</a>
-                                <a href="https://youtu.be/CPyxbO2D9kM" target="_blank" class="text-white hover:text-g-red text-sm font-bold uppercase tracking-wider"><i class="fab fa-youtube"></i> Video</a>
+                                <a href="https://github.com/DGadex/Neon-Rush-TFG" target="_blank"
+                                    class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i
+                                        class="fab fa-github"></i> Code</a>
+                                <a href="assets/Bachelor_Thesis_Edward_Mena.pdf" target="_blank"
+                                    class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i
+                                        class="fas fa-file-pdf"></i> Thesis</a>
+                                <a href="https://youtu.be/CPyxbO2D9kM" target="_blank"
+                                    class="text-white hover:text-g-red text-sm font-bold uppercase tracking-wider"><i
+                                        class="fab fa-youtube"></i> Video</a>
                             </div>
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 3: Prop Trip -->
-                <article class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end" style="transition-delay: 200ms;">
+                <article
+                    class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end"
+                    style="transition-delay: 200ms;">
                     <div class="image-container">
-                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10"></div>
-                        <img src="images/prop-trip.png" 
-                             data-static="images/prop-trip.png" 
-                             data-gif="images/prop-trip.gif" 
-                             alt="Prop Trip" 
-                             class="project-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
+                        </div>
+                        <img src="images/prop-trip.png" data-static="images/prop-trip.png"
+                            data-gif="images/prop-trip.gif" alt="Prop Trip" class="project-img">
                     </div>
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
-                             <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1">UJI Game Jam</span>
+                            <span
+                                class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1">UJI
+                                Game Jam</span>
                         </div>
-                        <h3 class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">Prop Trip</h3>
-                        
-                        <p class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
+                        <h3
+                            class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">
+                            Prop Trip</h3>
+
+                        <p
+                            class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
                             Infinite FPS movement shooter. Developed in 48h to explore toon shaders.
                         </p>
 
                         <div class="project-desc-overlay">
-                             <p class="text-gray-300 text-sm mb-6 leading-relaxed">
-                                Infinite FPS movement shooter. Developed in 48h to explore new mechanics, their implementation challenges and dig further into the use of toon shaders.
+                            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                                Infinite FPS movement shooter. Developed in 48h to explore new mechanics, their
+                                implementation challenges and dig further into the use of toon shaders.
                             </p>
                             <div class="flex gap-4">
-                                <a href="https://punicgoose.itch.io/prop-trip" target="_blank" class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i class="fas fa-gamepad"></i> Itch.io</a>
+                                <a href="https://punicgoose.itch.io/prop-trip" target="_blank"
+                                    class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i
+                                        class="fas fa-gamepad"></i> Itch.io</a>
                             </div>
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 4: Comet Strike -->
-                <article class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end">
+                <article
+                    class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end">
                     <div class="image-container">
-                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10"></div>
-                        <img src="images/CometStrike.png" 
-                             data-static="images/CometStrike.png" 
-                             data-gif="images/CometStrike.gif" 
-                             alt="Comet Strike" 
-                             class="project-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
+                        </div>
+                        <img src="images/CometStrike.png" data-static="images/CometStrike.png"
+                            data-gif="images/CometStrike.gif" alt="Comet Strike" class="project-img">
                     </div>
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
-                             <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1">Game Engines</span>
+                            <span
+                                class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1">Game
+                                Engines</span>
                         </div>
-                        <h3 class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">Comet Strike</h3>
-                        
-                        <p class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
-                            Action videogame focused on movement and defeating waves of enemies. Deep dive into Unity VFX.
+                        <h3
+                            class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">
+                            Comet Strike</h3>
+
+                        <p
+                            class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
+                            Action videogame focused on movement and defeating waves of enemies. Deep dive into Unity
+                            VFX.
                         </p>
 
                         <div class="project-desc-overlay">
-                             <p class="text-gray-300 text-sm mb-6 leading-relaxed">
-                                Action videogame where the player must defeat waves of enemies. The main purpose was to start scratching the surface of VFX and Shaders inside Unity.
+                            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                                Action videogame where the player must defeat waves of enemies. The main purpose was to
+                                start scratching the surface of VFX and Shaders inside Unity.
                             </p>
                             <div class="flex gap-4">
-                                <a href="https://github.com/DGadex/T1-CometStrike" target="_blank" class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i class="fab fa-github"></i> Code</a>
-                                <a href="https://youtu.be/z4svS3CbSv8" target="_blank" class="text-white hover:text-g-red text-sm font-bold uppercase tracking-wider"><i class="fab fa-youtube"></i> Video</a>
+                                <a href="https://github.com/DGadex/T1-CometStrike" target="_blank"
+                                    class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i
+                                        class="fab fa-github"></i> Code</a>
+                                <a href="https://youtu.be/z4svS3CbSv8" target="_blank"
+                                    class="text-white hover:text-g-red text-sm font-bold uppercase tracking-wider"><i
+                                        class="fab fa-youtube"></i> Video</a>
                             </div>
                         </div>
                     </div>
                 </article>
 
-                 <!-- Project 5: Crónicas de Castellnovo -->
-                 <article class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end" style="transition-delay: 100ms;">
+                <!-- Project 5: Crónicas de Castellnovo -->
+                <article
+                    class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end"
+                    style="transition-delay: 100ms;">
                     <div class="image-container">
-                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10"></div>
-                        <img src="images/castellnovo.png" 
-                             data-static="images/castellnovo.png" 
-                             data-gif="images/castellnovo.gif" 
-                             alt="Castellnovo" 
-                             class="project-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
+                        </div>
+                        <img src="images/castellnovo.png" data-static="images/castellnovo.png"
+                            data-gif="images/castellnovo.gif" alt="Castellnovo" class="project-img">
                     </div>
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
-                             <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1">Graphic Adventure</span>
+                            <span
+                                class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1">Graphic
+                                Adventure</span>
                         </div>
-                        <h3 class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">Crónicas de Castellnovo</h3>
-                        
-                        <p class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
+                        <h3
+                            class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">
+                            Crónicas de Castellnovo</h3>
+
+                        <p
+                            class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
                             Graphic adventure to promote local tourism. I worked on art and coding.
                         </p>
 
                         <div class="project-desc-overlay">
-                             <p class="text-gray-300 text-sm mb-6 leading-relaxed">
-                                A short graphic adventure where the player explores the town of Castellnovo. I took part in the art and several coding parts. Made to promote local tourism.
+                            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                                A short graphic adventure where the player explores the town of Castellnovo. I took part
+                                in the art and several coding parts. Made to promote local tourism.
                             </p>
                             <div class="flex gap-4">
-                                <a href="https://viktor-mjs.itch.io/cronicas-de-castellnovo" target="_blank" class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i class="fas fa-eye"></i> View More</a>
+                                <a href="https://viktor-mjs.itch.io/cronicas-de-castellnovo" target="_blank"
+                                    class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i
+                                        class="fas fa-eye"></i> View More</a>
                             </div>
                         </div>
                     </div>
                 </article>
 
-                 <!-- Project 6: Factory Wars -->
-                 <article class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end" style="transition-delay: 200ms;">
+                <!-- Project 6: Factory Wars -->
+                <article
+                    class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end"
+                    style="transition-delay: 200ms;">
                     <div class="image-container">
-                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10"></div>
-                        <img src="images/factory-wars.png" 
-                             data-static="images/factory-wars.png" 
-                             data-gif="images/factory-wars.gif" 
-                             alt="Factory Wars" 
-                             class="project-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
+                        </div>
+                        <img src="images/factory-wars.png" data-static="images/factory-wars.png"
+                            data-gif="images/factory-wars.gif" alt="Factory Wars" class="project-img">
                     </div>
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
-                             <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1">DevKitPro</span>
+                            <span
+                                class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1">DevKitPro</span>
                         </div>
-                        <h3 class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">Factory Wars</h3>
-                        
-                        <p class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
+                        <h3
+                            class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">
+                            Factory Wars</h3>
+
+                        <p
+                            class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
                             Strategy game inspired by PvZ. Developed using DevKitPro for Nintendo DS.
                         </p>
 
                         <div class="project-desc-overlay">
-                             <p class="text-gray-300 text-sm mb-6 leading-relaxed">
-                                Plants vs Zombies inspired game where the player defends his factory. Made using DevKitPro and NightFox's Lib for the Subject "Game Consoles".
+                            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                                Plants vs Zombies inspired game where the player defends his factory. Made using
+                                DevKitPro and NightFox's Lib for the Subject "Game Consoles".
                             </p>
                             <div class="flex gap-4">
-                                <a href="https://hollowblink.itch.io/factory-wars" target="_blank" class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i class="fas fa-eye"></i> View More</a>
-                                <a href="https://github.com/AlvaroChuan/Factory-Wars" target="_blank" class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://hollowblink.itch.io/factory-wars" target="_blank"
+                                    class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i
+                                        class="fas fa-eye"></i> View More</a>
+                                <a href="https://github.com/AlvaroChuan/Factory-Wars" target="_blank"
+                                    class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i
+                                        class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </div>
@@ -350,32 +432,41 @@
 
             <!-- --- ONGOING PROJECTS --- -->
             <div class="reveal mt-12 border-t border-white/10 pt-16">
-                 <div class="text-center mb-12">
+                <div class="text-center mb-12">
                     <p class="text-g-gold text-xs font-bold tracking-widest uppercase mb-3">In Development</p>
                     <h3 class="text-3xl font-serif font-bold text-white">Work in Progress</h3>
                 </div>
-                
+
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- WIP 1: Neon Rush Full -->
-                    <article class="project-card reveal glass-panel flex flex-col md:flex-row overflow-hidden group h-auto md:h-48">
+                    <article
+                        class="project-card reveal glass-panel flex flex-col md:flex-row overflow-hidden group h-auto md:h-48">
                         <div class="w-full md:w-2/5 relative overflow-hidden">
-                             <img src="images/NeonRushProgress.jpg" alt="Neon Rush WIP" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <img src="images/NeonRushProgress.jpg" alt="Neon Rush WIP"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         </div>
                         <div class="p-6 flex flex-col justify-center w-full md:w-3/5">
                             <h4 class="text-xl font-bold text-white mb-2">Neon Rush (Full Game)</h4>
-                            <p class="text-gray-400 text-sm mb-4">The full game version of my Bachelor's Thesis project. Currently in development.</p>
-                             <a href="assets/Bachelor_Thesis_Edward_Mena.pdf" target="_blank" class="text-g-gold text-xs font-bold uppercase tracking-wider hover:text-white"><i class="fas fa-file-pdf"></i> Read Thesis</a>
+                            <p class="text-gray-400 text-sm mb-4">The full game version of my Bachelor's Thesis project.
+                                Currently in development.</p>
+                            <a href="assets/Bachelor_Thesis_Edward_Mena.pdf" target="_blank"
+                                class="text-g-gold text-xs font-bold uppercase tracking-wider hover:text-white"><i
+                                    class="fas fa-file-pdf"></i> Read Thesis</a>
                         </div>
                     </article>
 
                     <!-- WIP 2: Coming Soon -->
-                    <article class="project-card reveal glass-panel flex flex-col md:flex-row overflow-hidden group h-auto md:h-48" style="transition-delay: 100ms;">
+                    <article
+                        class="project-card reveal glass-panel flex flex-col md:flex-row overflow-hidden group h-auto md:h-48"
+                        style="transition-delay: 100ms;">
                         <div class="w-full md:w-2/5 relative overflow-hidden">
-                             <img src="images/ComingSoon.png" alt="Coming Soon" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale opacity-50 group-hover:opacity-100">
+                            <img src="images/ComingSoon.png" alt="Coming Soon"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale opacity-50 group-hover:opacity-100">
                         </div>
                         <div class="p-6 flex flex-col justify-center w-full md:w-3/5">
                             <h4 class="text-xl font-bold text-white mb-2">COMING SOON</h4>
-                            <p class="text-gray-400 text-sm italic">"The future is always built on the past, even if we won't get to see it. Still, it's um, time for something new, now."</p>
+                            <p class="text-gray-400 text-sm italic">"The future is always built on the past, even if we
+                                won't get to see it. Still, it's um, time for something new, now."</p>
                         </div>
                     </article>
                 </div>
@@ -386,33 +477,45 @@
 
     <!-- FORMULA STUDENT SECTION -->
     <section id="formula" class="py-24 bg-g-black relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10" style="background-image: url('images/FSS-photo.jpg'); background-size: cover; background-position: center; filter: grayscale(100%);"></div>
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: url('images/FSS-photo.jpg'); background-size: cover; background-position: center; filter: grayscale(100%);">
+        </div>
         <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
 
         <div class="max-w-screen-2xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
             <div class="reveal">
                 <span class="text-g-red font-bold tracking-widest uppercase text-xs">Engineering & Passion</span>
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-4 mb-6">Formula Student <br> <span class="text-g-gold">UJIMotorsport</span></h2>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-4 mb-6">Formula Student <br> <span
+                        class="text-g-gold">UJIMotorsport</span></h2>
                 <div class="h-1 w-20 bg-white/20 mb-8"></div>
                 <p class="text-gray-400 leading-loose mb-6">
-                    Motorsport has always been one of my passions. Joining the UJIMotorsport team allowed me to dive into high-performance engineering.
+                    Motorsport has always been one of my passions. Joining the UJIMotorsport team allowed me to dive
+                    into high-performance engineering.
                 </p>
                 <p class="text-gray-400 leading-loose mb-8">
-                    I specialized in the <strong>Aerodynamics department</strong>, using Solidworks and StarCCM+ to design and optimize the aero package. From CFD simulations to Carbon Fiber lamination manufacturing, I've been involved in the entire lifecycle of the vehicle.
+                    I specialized in the <strong>Aerodynamics department</strong>, using Solidworks and StarCCM+ to
+                    design and optimize the aero package. From CFD simulations to Carbon Fiber lamination manufacturing,
+                    I've been involved in the entire lifecycle of the vehicle.
                 </p>
                 <ul class="text-gray-300 space-y-2 mb-8 text-sm">
-                    <li><i class="fas fa-trophy text-g-gold w-6"></i> <strong>P1 Overall</strong> - Formula Student Portugal '24</li>
-                    <li><i class="fas fa-trophy text-g-gold w-6"></i> <strong>P3 Overall</strong> - Formula Student Portugal '25</li>
-                    <li><i class="fas fa-flag-checkered text-g-red w-6"></i> <strong>Aerodynamics Lead</strong> - Design & Manufacturing</li>
+                    <li><i class="fas fa-trophy text-g-gold w-6"></i> <strong>P1 Overall</strong> - Formula Student
+                        Portugal '24</li>
+                    <li><i class="fas fa-trophy text-g-gold w-6"></i> <strong>P3 Overall</strong> - Formula Student
+                        Portugal '25</li>
+                    <li><i class="fas fa-flag-checkered text-g-red w-6"></i> <strong>Aerodynamics Lead</strong> - Design
+                        & Manufacturing</li>
                 </ul>
-                <a href="formula-student.html" class="inline-block border border-white px-8 py-3 text-white text-xs font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all">
+                <a href="formula-student.html"
+                    class="inline-block border border-white px-8 py-3 text-white text-xs font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all">
                     Full Experience
                 </a>
             </div>
-            
+
             <div class="reveal grid grid-cols-2 gap-4">
-                <img src="images/FSS25.JPG" alt="FSS 25" class="rounded border border-white/10 opacity-80 hover:opacity-100 transition-opacity">
-                <img src="images/winnersfspt.jpg" alt="Winners" class="rounded border border-white/10 opacity-80 hover:opacity-100 transition-opacity translate-y-8">
+                <img src="images/FSS25.JPG" alt="FSS 25"
+                    class="rounded border border-white/10 opacity-80 hover:opacity-100 transition-opacity">
+                <img src="images/winnersfspt.jpg" alt="Winners"
+                    class="rounded border border-white/10 opacity-80 hover:opacity-100 transition-opacity translate-y-8">
             </div>
         </div>
     </section>
@@ -421,7 +524,8 @@
     <section id="contact" class="py-24 bg-g-dark">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Let's <span class="text-g-red">Talk</span></h2>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Let's <span
+                        class="text-g-red">Talk</span></h2>
                 <p class="text-gray-400 max-w-xl mx-auto">
                     Ready to embark on new exciting projects together? Send me a message or connect via social media.
                 </p>
@@ -431,22 +535,23 @@
                 <!-- Form -->
                 <form action="https://formsubmit.co/edw2404@gmail.com" method="POST" class="space-y-6">
                     <div>
-                        <input type="text" name="name" placeholder="YOUR NAME" required 
+                        <input type="text" name="name" placeholder="YOUR NAME" required
                             class="w-full bg-g-black border border-white/10 p-4 text-white focus:border-g-gold focus:outline-none transition-colors placeholder-gray-600 text-sm tracking-widest">
                     </div>
                     <div>
-                        <input type="email" name="email" placeholder="YOUR EMAIL" required 
+                        <input type="email" name="email" placeholder="YOUR EMAIL" required
                             class="w-full bg-g-black border border-white/10 p-4 text-white focus:border-g-gold focus:outline-none transition-colors placeholder-gray-600 text-sm tracking-widest">
                     </div>
                     <div>
-                        <textarea name="message" rows="5" placeholder="YOUR MESSAGE" required 
+                        <textarea name="message" rows="5" placeholder="YOUR MESSAGE" required
                             class="w-full bg-g-black border border-white/10 p-4 text-white focus:border-g-gold focus:outline-none transition-colors placeholder-gray-600 text-sm tracking-widest"></textarea>
                     </div>
                     <!-- Honey pot for spam prevention (optional but good) -->
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://dgadex.github.io/index.html"> 
-                    
-                    <button type="submit" class="w-full bg-white text-black py-4 font-bold tracking-widest uppercase hover:bg-g-gold hover:text-white transition-all duration-300">
+                    <input type="hidden" name="_next" value="https://dgadex.github.io/index.html">
+
+                    <button type="submit"
+                        class="w-full bg-white text-black py-4 font-bold tracking-widest uppercase hover:bg-g-gold hover:text-white transition-all duration-300">
                         Send Message
                     </button>
                 </form>
@@ -454,24 +559,39 @@
                 <!-- Socials -->
                 <div class="flex flex-col justify-center space-y-8 md:pl-12 border-l border-white/5">
                     <div class="group">
-                        <h4 class="text-gray-500 text-xs uppercase tracking-widest mb-2 group-hover:text-g-red transition-colors">Development</h4>
+                        <h4
+                            class="text-gray-500 text-xs uppercase tracking-widest mb-2 group-hover:text-g-red transition-colors">
+                            Development</h4>
                         <div class="flex gap-4 text-2xl">
-                            <a href="https://github.com/DGadex" target="_blank" class="text-white hover:text-g-gold transition-colors"><i class="fab fa-github"></i></a>
-                            <a href="https://dgadex.itch.io/" target="_blank" class="text-white hover:text-g-red transition-colors"><i class="fab fa-itch-io"></i></a>
+                            <a href="https://github.com/DGadex" target="_blank"
+                                class="text-white hover:text-g-gold transition-colors"><i class="fab fa-github"></i></a>
+                            <a href="https://dgadex.itch.io/" target="_blank"
+                                class="text-white hover:text-g-red transition-colors"><i class="fab fa-itch-io"></i></a>
                         </div>
                     </div>
                     <div class="group">
-                        <h4 class="text-gray-500 text-xs uppercase tracking-widest mb-2 group-hover:text-g-red transition-colors">Connect</h4>
+                        <h4
+                            class="text-gray-500 text-xs uppercase tracking-widest mb-2 group-hover:text-g-red transition-colors">
+                            Connect</h4>
                         <div class="flex gap-4 text-2xl">
-                            <a href="https://www.linkedin.com/in/edward-alejandro-mena-ordoñez-aaa900311" target="_blank" class="text-white hover:text-blue-500 transition-colors"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:edw2404@gmail.com" class="text-white hover:text-g-gold transition-colors"><i class="fas fa-envelope"></i></a>
+                            <a href="https://www.linkedin.com/in/edward-alejandro-mena-ordoñez-aaa900311"
+                                target="_blank" class="text-white hover:text-blue-500 transition-colors"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="mailto:edw2404@gmail.com" class="text-white hover:text-g-gold transition-colors"><i
+                                    class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                     <div class="group">
-                        <h4 class="text-gray-500 text-xs uppercase tracking-widest mb-2 group-hover:text-g-red transition-colors">Follow</h4>
+                        <h4
+                            class="text-gray-500 text-xs uppercase tracking-widest mb-2 group-hover:text-g-red transition-colors">
+                            Follow</h4>
                         <div class="flex gap-4 text-2xl">
-                            <a href="https://www.instagram.com/dgadex_" target="_blank" class="text-white hover:text-pink-500 transition-colors"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@GadexR" target="_blank" class="text-white hover:text-red-600 transition-colors"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/dgadex_" target="_blank"
+                                class="text-white hover:text-pink-500 transition-colors"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/@GadexR" target="_blank"
+                                class="text-white hover:text-red-600 transition-colors"><i
+                                    class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -486,4 +606,5 @@
     <!-- Tu Javascript Personalizado (Local - Nuevo Nombre) -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
