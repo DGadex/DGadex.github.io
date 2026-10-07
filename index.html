@@ -197,11 +197,13 @@
                             <span
                                 class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-1 mr-2">Unity</span>
                             <span
-                                class="text-white text-[10px] font-bold uppercase tracking-wider border border-white/30 px-2 py-1">VFX</span>
+                                class="text-white text-[10px] font-bold uppercase tracking-wider border border-white/30 px-2 py-1 mr-2">VFX</span>
+                            <span
+                                class="text-white/60 text-[10px] font-bold uppercase tracking-wider border border-white/20 px-2 py-1">Game Jam</span>
                         </div>
                         <h3
                             class="text-2xl font-serif font-bold text-white mb-2 group-hover:text-g-red transition-colors">
-                            Goblinmancer</h3>
+                            Goblinmancer (OG)</h3>
 
                         <p
                             class="text-gray-400 text-sm line-clamp-2 group-hover:opacity-0 transition-opacity duration-300">
@@ -212,15 +214,18 @@
                             <p class="text-gray-300 text-sm mb-6 leading-relaxed">
                                 Turn-based Tower Defense "spooky-themed" videogame. I mainly took part in the VFX and
                                 graphics creation and implementation. Made by the team Back to Bits in the Game Jam
-                                Jamsepticeye 25'.
+                                Jamsepticeye 25'. A full roguelite reimagining is now in development for Steam!
                             </p>
-                            <div class="flex gap-4">
+                            <div class="flex flex-wrap gap-4">
                                 <a href="https://kiskidiego.itch.io/goblinmancer" target="_blank"
                                     class="text-white hover:text-g-gold text-sm font-bold uppercase tracking-wider"><i
                                         class="fas fa-play"></i> Play</a>
                                 <a href="https://youtu.be/EVdRs7xufN0" target="_blank"
                                     class="text-white hover:text-g-red text-sm font-bold uppercase tracking-wider"><i
                                         class="fab fa-youtube"></i> Video</a>
+                                <a href="https://store.steampowered.com/app/4919720/GoblinMancer/" target="_blank"
+                                    class="text-white hover:text-blue-400 text-sm font-bold uppercase tracking-wider"><i
+                                        class="fab fa-steam"></i> Steam</a>
                             </div>
                         </div>
                     </div>
@@ -441,36 +446,99 @@
                     <h3 class="text-3xl font-serif font-bold text-white">Work in Progress</h3>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- WIP 1: Neon Rush Full -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- WIP 1: GoblinMancer Reboot -->
                     <article
-                        class="project-card reveal glass-panel flex flex-col md:flex-row overflow-hidden group h-auto md:h-48">
-                        <div class="w-full md:w-2/5 relative overflow-hidden">
-                            <img src="images/NeonRushProgress.jpg" alt="Neon Rush WIP"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        class="project-card reveal glass-panel flex flex-col overflow-hidden group h-full">
+                        <div class="w-full h-48 relative overflow-hidden bg-black">
+                            <picture>
+                                <source srcset="images/goblinmancer-steam.webp" type="image/webp">
+                                <img src="images/goblinmancer-steam.jpg" alt="GoblinMancer Steam"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            </picture>
                         </div>
-                        <div class="p-6 flex flex-col justify-center w-full md:w-3/5">
-                            <h4 class="text-xl font-bold text-white mb-2">Neon Rush (Full Game)</h4>
-                            <p class="text-gray-400 text-sm mb-4">The full game version of my Bachelor's Thesis project.
-                                Currently in development.</p>
-                            <a href="assets/Bachelor_Thesis_Edward_Mena.pdf" target="_blank"
-                                class="text-g-gold text-xs font-bold uppercase tracking-wider hover:text-white"><i
-                                    class="fas fa-file-pdf"></i> Read Thesis</a>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <div class="mb-3 flex flex-wrap gap-2">
+                                    <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-0.5">Roguelite</span>
+                                    <span class="text-white text-[10px] font-bold uppercase tracking-wider border border-white/30 px-2 py-0.5">Tower Defense</span>
+                                    <span class="text-blue-400 text-[10px] font-bold uppercase tracking-wider border border-blue-400/40 px-2 py-0.5">Steam</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors">GoblinMancer</h4>
+                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                    Reimagining the classic game into a Tower-Defense Auto-Battler Roguelite. Build your fortress, raise undead armies, and unleash dark magic. In active development.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
+                                <a href="https://store.steampowered.com/app/4919720/GoblinMancer/" target="_blank"
+                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fab fa-steam text-base text-blue-400"></i> Steam Page
+                                </a>
+                            </div>
                         </div>
                     </article>
 
-                    <!-- WIP 2: Coming Soon -->
+                    <!-- WIP 2: K-Boom! -->
                     <article
-                        class="project-card reveal glass-panel flex flex-col md:flex-row overflow-hidden group h-auto md:h-48"
+                        class="project-card reveal glass-panel flex flex-col overflow-hidden group h-full"
                         style="transition-delay: 100ms;">
-                        <div class="w-full md:w-2/5 relative overflow-hidden">
-                            <img src="images/ComingSoon.png" alt="Coming Soon"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale opacity-50 group-hover:opacity-100" loading="lazy">
+                        <div class="w-full h-48 relative overflow-hidden bg-black">
+                            <picture>
+                                <source srcset="images/kboom-capsule.webp" type="image/webp">
+                                <img src="images/kboom-capsule.jpg" alt="K-Boom! Steam"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            </picture>
                         </div>
-                        <div class="p-6 flex flex-col justify-center w-full md:w-3/5">
-                            <h4 class="text-xl font-bold text-white mb-2">COMING SOON</h4>
-                            <p class="text-gray-400 text-sm italic">"The future is always built on the past, even if we
-                                won't get to see it. Still, it's um, time for something new, now."</p>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <div class="mb-3 flex flex-wrap gap-2">
+                                    <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-0.5">VFX</span>
+                                    <span class="text-white text-[10px] font-bold uppercase tracking-wider border border-white/30 px-2 py-0.5">Puzzle</span>
+                                    <span class="text-g-red text-[10px] font-bold uppercase tracking-wider border border-g-red px-2 py-0.5">Demo Out</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors">K-Boom!</h4>
+                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                    Bomb and puzzle game where you create explosion sequences to help Camilo the chameleon. I worked on the Visual Effects (VFX). Playable demo available now!
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
+                                <a href="https://store.steampowered.com/app/4881340/KBoom/" target="_blank"
+                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fab fa-steam text-base text-blue-400"></i> Steam Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- WIP 3: Neon Rush Full -->
+                    <article
+                        class="project-card reveal glass-panel flex flex-col overflow-hidden group h-full"
+                        style="transition-delay: 200ms;">
+                        <div class="w-full h-48 relative overflow-hidden bg-black">
+                            <img src="images/NeonRushProgress.jpg" alt="Neon Rush WIP"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        </div>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <div class="mb-3 flex flex-wrap gap-2">
+                                    <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold px-2 py-0.5">Racing</span>
+                                    <span class="text-white text-[10px] font-bold uppercase tracking-wider border border-white/30 px-2 py-0.5">Physics & VFX</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors">Neon Rush (Full Game)</h4>
+                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                    The full commercial version of my Bachelor's Thesis project with an in-depth track builder tool, stylized neon shaders, and custom vehicle physics.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
+                                <a href="assets/Bachelor_Thesis_Edward_Mena.pdf" target="_blank"
+                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fas fa-file-pdf text-base"></i> Read Thesis
+                                </a>
+                                <a href="https://github.com/DGadex/Neon-Rush-TFG" target="_blank"
+                                    class="inline-flex items-center gap-2 text-gray-400 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fab fa-github text-base"></i> Code
+                                </a>
+                            </div>
                         </div>
                     </article>
                 </div>
