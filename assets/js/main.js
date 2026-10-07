@@ -693,4 +693,73 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- 11. BOTÓN VOLVER ARRIBA (BACK TO TOP) ---
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // --- 12. COPIAR EMAIL CON TOAST NOTIFICATION ---
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    if (copyEmailBtn) {
+        let toastTimeout = null;
+        const emailToCopy = 'edwb2404@gmail.com';
+
+        const showToast = (message) => {
+            let toast = document.getElementById('copy-toast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'copy-toast';
+                toast.className = 'toast-notification';
+                document.body.appendChild(toast);
+            }
+            toast.innerHTML = `<i class="fas fa-check-circle text-g-gold text-base"></i> <span>${message}</span>`;
+            toast.classList.add('show');
+
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        };
+
+        copyEmailBtn.addEventListener('click', async () => {
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(emailToCopy);
+                } else {
+                    const tempInput = document.createElement('input');
+                    tempInput.value = emailToCopy;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                }
+
+                showToast(`Copied: <strong>${emailToCopy}</strong>`);
+
+                const originalHtml = copyEmailBtn.innerHTML;
+                copyEmailBtn.innerHTML = '<i class="fas fa-check text-g-gold"></i> <span>Copied!</span>';
+
+                setTimeout(() => {
+                    copyEmailBtn.innerHTML = originalHtml;
+                }, 2000);
+            } catch (err) {
+                showToast(`Email: <strong>${emailToCopy}</strong>`);
+            }
+        });
+    }
 });

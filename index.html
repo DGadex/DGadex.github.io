@@ -7,6 +7,20 @@
     <title>Edward Mena | Game Designer & VFX Artist</title>
     <meta name="description" content="Portfolio of Edward Mena - Game Designer, VFX Artist & Technical Designer">
 
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dgadex.github.io/">
+    <meta property="og:title" content="Edward Mena | Game Designer, VFX Artist & Technical Designer">
+    <meta property="og:description" content="Portfolio of Edward Mena. Real-time VFX in Unity & Unreal, indie game development with BackToBits Studio, and physics simulation with UJI Motorsport.">
+    <meta property="og:image" content="https://dgadex.github.io/images/profile.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://dgadex.github.io/">
+    <meta name="twitter:title" content="Edward Mena | Game Designer, VFX Artist & Technical Designer">
+    <meta name="twitter:description" content="Portfolio of Edward Mena. Real-time VFX in Unity & Unreal, indie game development with BackToBits Studio, and physics simulation with UJI Motorsport.">
+    <meta name="twitter:image" content="https://dgadex.github.io/images/profile.png">
+
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -128,28 +142,66 @@
                 <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-8">About <span
                         class="text-g-gold">Me</span></h2>
 
-                <div class="space-y-6 text-gray-400 leading-relaxed font-light">
+                <div class="space-y-5 text-gray-400 leading-relaxed font-light">
                     <p>
-                        Hi! I'm <strong>Edward Mena</strong>, a student of Videogame Design and Development at
-                        Universitat Jaume I.
+                        Hi! I'm <strong>Edward Mena</strong>, a Videogame Design and Development graduate from
+                        <strong>Universitat Jaume I</strong>, specialized in <strong>Real-Time Visual Effects (VFX)</strong>,
+                        <strong>Shader Development</strong>, and <strong>Technical Design</strong>.
                     </p>
                     <p>
-                        I’m passionate about creating interactive experiences that blend visual impact, technical
-                        precision, and meaningful design. My main interests lie in <strong>visual effects</strong> and
-                        <strong>technical design</strong>, and I aim to keep growing as a professional in the videogame
-                        industry.
+                        I co-founded <strong class="text-white">BackToBits Studio</strong> alongside university colleagues, where I serve as
+                        <strong>VFX Artist</strong> creating real-time particle simulations, custom shaders, and gameplay visuals for our upcoming
+                        commercial titles on Steam, including <em>GoblinMancer</em> and <em>K-Boom!</em>.
                     </p>
                     <p>
-                        I also have a deep passion for motorsport, and my dream is to one day work at a videogame studio
-                        or racing simulator developer, where I can unite both worlds I love.
+                        Through the <strong class="text-white">Estudia i Investiga Program</strong> at Universitat Jaume I & Instituto de Nuevas Tecnologías,
+                        I've worked as an Emerging Technologies Researcher developing interactive <strong>Augmented Reality (AR)</strong>
+                        applications in Unity (C#) using <strong>Niantic Lightship ARDK</strong>, mobile runtime optimization, and responsive architectures.
+                    </p>
+                    <p>
+                        In motorsport engineering, I contribute to <strong class="text-white">UJIMotorsport</strong> (Formula Student), designing the aerodynamics package and developing the high-fidelity <strong>Assetto Corsa digital twin mod</strong> of our single-seater for driver training and telemetry validation.
+                    </p>
+                    <p>
+                        In parallel, I conduct personal research in collaboration with external research groups, investigating <strong>Physics-Informed Neural Networks (PINNs)</strong> and deep learning to augment physics simulation engines and explore new frontiers for video games.
                     </p>
                 </div>
 
-                <div class="mt-10">
+                <!-- BackToBits Studio Spotlight Card -->
+                <div class="mt-8 p-5 rounded-lg bg-g-dark/80 border border-white/10 hover:border-g-gold/40 transition-all duration-300">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded bg-g-gold/10 border border-g-gold/30 flex items-center justify-center text-g-gold text-lg flex-shrink-0">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm tracking-wide">BackToBits Studio</h4>
+                                <p class="text-xs text-gray-400">Co-founder & VFX Artist · Indie Studio</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <a href="https://backtobitsstudio.com/" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-g-gold hover:text-white border border-g-gold/40 hover:border-g-gold rounded transition-colors">
+                                <i class="fas fa-globe"></i> Website
+                            </a>
+                            <a href="https://store.steampowered.com/search/?developer=BackToBits%20Studio" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-blue-400 hover:text-white border border-blue-400/40 hover:border-blue-400 rounded transition-colors">
+                                <i class="fab fa-steam"></i> Steam
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CV and Tags -->
+                <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
                     <a href="assets/EdwardMena_CV_EN.pdf" target="_blank"
                         class="inline-flex items-center gap-3 text-white border-b border-g-red pb-1 hover:text-g-red transition-colors uppercase text-xs tracking-widest font-bold">
                         <i class="fas fa-download"></i> Download CV
                     </a>
+                    <div class="flex flex-wrap gap-2 text-[11px] text-gray-400">
+                        <span class="bg-white/5 border border-white/10 px-2.5 py-1 rounded text-gray-300"><i class="fas fa-magic text-g-gold mr-1"></i> VFX Graph & Shaders</span>
+                        <span class="bg-white/5 border border-white/10 px-2.5 py-1 rounded text-gray-300"><i class="fas fa-vr-cardboard text-purple-400 mr-1"></i> AR · Niantic Lightship</span>
+                        <span class="bg-white/5 border border-white/10 px-2.5 py-1 rounded text-gray-300"><i class="fas fa-brain text-purple-300 mr-1"></i> PINNs Research</span>
+                    </div>
                 </div>
             </div>
 
@@ -533,7 +585,7 @@
                     <!-- WIP 3: Neon Rush Full -->
                     <article
                         class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-g-gold/50 transition-all duration-300"
-                        style="transition-delay: 200ms;">
+                        style="transition-delay: 150ms;">
                         <div class="w-full aspect-video relative overflow-hidden bg-black">
                             <img src="images/NeonRushProgress.jpg" alt="Neon Rush WIP"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
@@ -558,6 +610,76 @@
                                 <a href="https://github.com/DGadex/Neon-Rush-TFG" target="_blank"
                                     class="inline-flex items-center gap-2 text-gray-400 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
                                     <i class="fab fa-github text-base"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- WIP 4: UFS-07 Assetto Corsa Mod -->
+                    <article
+                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-g-gold/50 transition-all duration-300"
+                        style="transition-delay: 200ms;">
+                        <div class="w-full aspect-video relative overflow-hidden bg-black">
+                            <img src="images/FS-Teaser.jpg" alt="UFS-07 Assetto Corsa Mod"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
+                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">Assetto Corsa</span>
+                                <span class="text-g-red text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-red/50 px-2 py-0.5 rounded">Formula Student</span>
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Simulation</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors flex items-center justify-between">
+                                    <span>UFS-07 Mod</span>
+                                    <span class="text-g-red text-xs font-bold uppercase tracking-wider border border-g-red/40 px-2 py-0.5 rounded flex items-center gap-1">
+                                        <i class="fas fa-car-side"></i> Digital Twin
+                                    </span>
+                                </h4>
+                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                    Developing a high-fidelity Assetto Corsa simulation mod of the UFS-07 single-seater for the UJIMotorsport team, facilitating real-time telemetry testing, virtual setup validation, and pre-competition driver training.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
+                                <a href="formula-student.html"
+                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fas fa-flag-checkered text-base text-g-red"></i> Team & Mod Info
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- WIP 5: PINNs Neural Physics Research -->
+                    <article
+                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+                        style="transition-delay: 250ms;">
+                        <div class="w-full aspect-video relative overflow-hidden bg-black">
+                            <img src="images/pinn-research.webp" alt="PINNs Neural Physics Research"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
+                                <span class="text-purple-400 text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-purple-400/50 px-2 py-0.5 rounded">PINNs</span>
+                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">Deep Learning</span>
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Physics Engines</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors flex items-center justify-between">
+                                    <span>PINNs & Neural Physics</span>
+                                    <span class="text-purple-400 text-xs font-bold uppercase tracking-wider border border-purple-400/40 px-2 py-0.5 rounded flex items-center gap-1">
+                                        <i class="fas fa-brain"></i> AI Research
+                                    </span>
+                                </h4>
+                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                    Personal research in collaboration with external research groups, investigating Physics-Informed Neural Networks (PINNs) and deep learning models to augment real-time physics engines and video game simulation.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
+                                <a href="#contact"
+                                    class="inline-flex items-center gap-2 text-purple-300 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fas fa-flask text-base text-g-gold"></i> Research Inquiries
                                 </a>
                             </div>
                         </div>
@@ -626,7 +748,7 @@
 
             <div class="grid md:grid-cols-2 gap-12 reveal">
                 <!-- Form -->
-                <form action="https://formsubmit.co/edw2404@gmail.com" method="POST" class="space-y-6">
+                <form action="https://formsubmit.co/edwb2404@gmail.com" method="POST" class="space-y-6">
                     <div>
                         <input type="text" name="name" placeholder="YOUR NAME" required
                             class="w-full bg-g-black border border-white/10 p-4 text-white focus:border-g-gold focus:outline-none transition-colors placeholder-gray-600 text-sm tracking-widest">
@@ -666,12 +788,19 @@
                         <h4
                             class="text-gray-500 text-xs uppercase tracking-widest mb-2 group-hover:text-g-red transition-colors">
                             Connect</h4>
-                        <div class="flex gap-4 text-2xl">
+                        <div class="flex gap-4 text-2xl mb-3">
                             <a href="https://www.linkedin.com/in/edward-alejandro-mena-ordoñez-aaa900311"
-                                target="_blank" class="text-white hover:text-blue-500 transition-colors"><i
+                                target="_blank" class="text-white hover:text-blue-500 transition-colors" title="LinkedIn"><i
                                     class="fab fa-linkedin"></i></a>
-                            <a href="mailto:edw2404@gmail.com" class="text-white hover:text-g-gold transition-colors"><i
+                            <a href="mailto:edwb2404@gmail.com" class="text-white hover:text-g-gold transition-colors" title="Send Email"><i
                                     class="fas fa-envelope"></i></a>
+                        </div>
+                        <!-- Copiar Email Interactivo -->
+                        <div class="flex items-center gap-2 bg-black/60 border border-white/10 rounded-md p-2 max-w-xs">
+                            <span class="text-xs font-mono text-gray-300 truncate select-all flex-1">edwb2404@gmail.com</span>
+                            <button id="copy-email-btn" type="button" class="px-2.5 py-1 bg-white/10 hover:bg-g-gold hover:text-black text-gray-200 text-[10px] font-bold uppercase tracking-wider rounded transition-colors flex items-center gap-1.5" title="Copy email address">
+                                <i class="far fa-copy"></i> <span>Copy</span>
+                            </button>
                         </div>
                     </div>
                     <div class="group">
@@ -695,6 +824,11 @@
     <footer class="py-8 bg-black text-center border-t border-white/5">
         <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2026 DGadex. All rights reserved.</p>
     </footer>
+
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Volver arriba" title="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <!-- Tu Javascript Personalizado (Local - Nuevo Nombre) -->
     <script src="assets/js/main.js"></script>
