@@ -159,8 +159,12 @@
                 </div>
                 <div
                     class="relative h-[500px] w-full bg-g-dark overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                    <img src="images/profile.png" alt="Edward Mena"
-                        class="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <picture>
+                        <source srcset="images/profile.webp" type="image/webp">
+                        <img src="images/profile.png" alt="Edward Mena"
+                            class="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                            loading="lazy">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -185,7 +189,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
                         </div>
                         <img src="images/goblinmancer.png" data-static="images/goblinmancer.png"
-                            data-gif="images/goblinmancer.gif" alt="Goblinmancer" class="project-img">
+                            data-gif="images/goblinmancer.gif" alt="Goblinmancer" class="project-img pixelated" loading="lazy">
                     </div>
 
                     <div class="relative z-20 p-8">
@@ -230,7 +234,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
                         </div>
                         <img src="images/NeonRushLogo.png" data-static="images/NeonRushLogo.png"
-                            data-gif="images/NeonRush.gif" alt="Neon Rush" class="project-img">
+                            data-gif="images/NeonRush.gif" alt="Neon Rush" class="project-img" loading="lazy">
                     </div>
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
@@ -276,7 +280,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
                         </div>
                         <img src="images/prop-trip.png" data-static="images/prop-trip.png"
-                            data-gif="images/prop-trip.gif" alt="Prop Trip" class="project-img">
+                            data-gif="images/prop-trip.gif" alt="Prop Trip" class="project-img" loading="lazy">
                     </div>
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
@@ -314,7 +318,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
                         </div>
                         <img src="images/CometStrike.png" data-static="images/CometStrike.png"
-                            data-gif="images/CometStrike.gif" alt="Comet Strike" class="project-img">
+                            data-gif="images/CometStrike.gif" alt="Comet Strike" class="project-img" loading="lazy">
                     </div>
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
@@ -357,7 +361,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
                         </div>
                         <img src="images/castellnovo.png" data-static="images/castellnovo.png"
-                            data-gif="images/castellnovo.gif" alt="Castellnovo" class="project-img">
+                            data-gif="images/castellnovo.gif" alt="Castellnovo" class="project-img" loading="lazy">
                     </div>
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
@@ -396,7 +400,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
                         </div>
                         <img src="images/factory-wars.png" data-static="images/factory-wars.png"
-                            data-gif="images/factory-wars.gif" alt="Factory Wars" class="project-img">
+                            data-gif="images/factory-wars.gif" alt="Factory Wars" class="project-img pixelated" loading="lazy">
                     </div>
                     <div class="relative z-20 p-8">
                         <div class="mb-2">
@@ -443,7 +447,7 @@
                         class="project-card reveal glass-panel flex flex-col md:flex-row overflow-hidden group h-auto md:h-48">
                         <div class="w-full md:w-2/5 relative overflow-hidden">
                             <img src="images/NeonRushProgress.jpg" alt="Neon Rush WIP"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
                         </div>
                         <div class="p-6 flex flex-col justify-center w-full md:w-3/5">
                             <h4 class="text-xl font-bold text-white mb-2">Neon Rush (Full Game)</h4>
@@ -461,7 +465,7 @@
                         style="transition-delay: 100ms;">
                         <div class="w-full md:w-2/5 relative overflow-hidden">
                             <img src="images/ComingSoon.png" alt="Coming Soon"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale opacity-50 group-hover:opacity-100">
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale opacity-50 group-hover:opacity-100" loading="lazy">
                         </div>
                         <div class="p-6 flex flex-col justify-center w-full md:w-3/5">
                             <h4 class="text-xl font-bold text-white mb-2">COMING SOON</h4>
@@ -513,9 +517,9 @@
 
             <div class="reveal grid grid-cols-2 gap-4">
                 <img src="images/FSS25.JPG" alt="FSS 25"
-                    class="rounded border border-white/10 opacity-80 hover:opacity-100 transition-opacity">
+                    class="rounded border border-white/10 opacity-80 hover:opacity-100 transition-opacity" loading="lazy">
                 <img src="images/winnersfspt.jpg" alt="Winners"
-                    class="rounded border border-white/10 opacity-80 hover:opacity-100 transition-opacity translate-y-8">
+                    class="rounded border border-white/10 opacity-80 hover:opacity-100 transition-opacity translate-y-8" loading="lazy">
             </div>
         </div>
     </section>
@@ -600,7 +604,7 @@
     </section>
 
     <footer class="py-8 bg-black text-center border-t border-white/5">
-        <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2025 DGadex. All rights reserved.</p>
+        <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2026 DGadex. All rights reserved.</p>
     </footer>
 
     <!-- Tu Javascript Personalizado (Local - Nuevo Nombre) -->

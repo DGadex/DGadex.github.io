@@ -1,0 +1,8 @@
+# Backups and temporary files
+.images_backup/
+.backup/
+scratch/
+__pycache__/
+*.tmp
+.DS_Store
+Thumbs.db

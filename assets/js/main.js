@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- 1. LÁMPARA DE LAVA (HOME) ---
     const fluidCanvas = document.getElementById('fluidCanvas');
     if (fluidCanvas) {
         const ctx = fluidCanvas.getContext('2d');
         let width, height;
         let particles = [];
-        const particleCount = 15; 
+        const particleCount = 15;
         let mouse = { x: -1000, y: -1000 };
+        let isVisible = true;
+        let animationFrameId = null;
 
         function resize() {
             width = fluidCanvas.width = window.innerWidth;
@@ -18,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 1.0; 
+                this.vx = (Math.random() - 0.5) * 1.0;
                 this.vy = (Math.random() - 0.5) * 1.0;
-                this.size = Math.random() * 60 + 40; 
+                this.size = Math.random() * 60 + 40;
                 const colors = ['#D4AF37', '#8B0000', '#C41E3A', '#996515'];
                 this.color = colors[Math.floor(Math.random() * colors.length)];
             }
@@ -34,22 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 const centerY = height / 2;
                 const dxCenter = centerX - this.x;
                 const dyCenter = centerY - this.y;
-                const distCenter = Math.sqrt(dxCenter*dxCenter + dyCenter*dyCenter);
-                
-                if(distCenter > 300) {
-                     const pullStrength = 0.00002 * (distCenter / 300);
-                     this.vx += dxCenter * pullStrength;
-                     this.vy += dyCenter * pullStrength;
+                const distCenter = Math.sqrt(dxCenter * dxCenter + dyCenter * dyCenter);
+
+                if (distCenter > 300) {
+                    const pullStrength = 0.00002 * (distCenter / 300);
+                    this.vx += dxCenter * pullStrength;
+                    this.vy += dyCenter * pullStrength;
                 } else {
-                     this.vx += dxCenter * 0.000001; 
-                     this.vy += dyCenter * 0.000001; 
+                    this.vx += dxCenter * 0.000001;
+                    this.vy += dyCenter * 0.000001;
                 }
 
-                // Mouse
+                // Mouse / Touch
                 const dxMouse = mouse.x - this.x;
                 const dyMouse = mouse.y - this.y;
                 const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-                const maxDist = 150; 
+                const maxDist = 150;
 
                 if (distMouse < maxDist) {
                     const force = (maxDist - distMouse) / maxDist;
@@ -58,9 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.vy -= Math.sin(angle) * force * 0.2;
                 }
 
-                this.vx *= 0.998; 
+                this.vx *= 0.998;
                 this.vy *= 0.998;
-                
+
                 if (this.x < -150 || this.x > width + 150) this.vx *= -1;
                 if (this.y < -150 || this.y > height + 150) this.vy *= -1;
             }
@@ -81,16 +83,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function animate() {
+            if (!isVisible) return;
             ctx.clearRect(0, 0, width, height);
             particles.forEach(p => {
                 p.update();
                 p.draw();
             });
-            requestAnimationFrame(animate);
+            animationFrameId = requestAnimationFrame(animate);
         }
 
-        window.addEventListener('resize', () => { resize(); initParticles(); });
-        window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        // Soporte táctil en pantalla de inicio
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches && e.touches[0]) {
+                mouse.x = e.touches[0].clientX;
+                mouse.y = e.touches[0].clientY;
+            }
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+            mouse.x = -1000;
+            mouse.y = -1000;
+        }, { passive: true });
+
+        // Optimización de batería: Pausar canvas al salir del viewport
+        const heroSection = fluidCanvas.closest('header') || fluidCanvas;
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+                if (isVisible) {
+                    if (!animationFrameId) {
+                        animationFrameId = requestAnimationFrame(animate);
+                    }
+                } else {
+                    if (animationFrameId) {
+                        cancelAnimationFrame(animationFrameId);
+                        animationFrameId = null;
+                    }
+                }
+            });
+        }, { threshold: 0.05 });
+        heroObserver.observe(heroSection);
 
         resize();
         initParticles();
@@ -103,7 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = raceCanvas.getContext('2d');
         let width, height;
         let racers = [];
-        const racerCount = 25; 
+        const racerCount = 25;
+        let isVisibleRace = true;
+        let animationFrameRaceId = null;
 
         function resizeRace() {
             width = raceCanvas.width = window.innerWidth;
@@ -118,15 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
             reset() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                // VELOCIDAD MUCHO MÁS LENTA Y ELEGANTE
-                this.speed = Math.random() * 2 + 1; // Antes era *4 + 2
-                this.length = Math.random() * 80 + 30; 
-                this.width = Math.random() * 3 + 1; 
-                
+                this.speed = Math.random() * 2 + 1;
+                this.length = Math.random() * 80 + 30;
+                this.width = Math.random() * 3 + 1;
+
                 const colors = [
-                    'rgba(255, 255, 255, 0.6)', 
-                    'rgba(200, 30, 58, 0.8)',   
-                    'rgba(212, 175, 55, 0.7)'   
+                    'rgba(255, 255, 255, 0.6)',
+                    'rgba(200, 30, 58, 0.8)',
+                    'rgba(212, 175, 55, 0.7)'
                 ];
                 this.color = colors[Math.floor(Math.random() * colors.length)];
             }
@@ -136,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (this.x > width + this.length) {
                     this.x = -this.length;
                     this.y = Math.random() * height;
-                    // Reset speed on loop
                     this.speed = Math.random() * 2 + 1;
                 }
             }
@@ -146,11 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const gradient = ctx.createLinearGradient(this.x - this.length, this.y, this.x, this.y);
                 gradient.addColorStop(0, "transparent");
                 gradient.addColorStop(1, this.color);
-                
+
                 ctx.strokeStyle = gradient;
                 ctx.lineWidth = this.width;
                 ctx.lineCap = "round";
-                
+
                 ctx.moveTo(this.x - this.length, this.y);
                 ctx.lineTo(this.x, this.y);
                 ctx.stroke();
@@ -165,16 +207,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function animateRace() {
+            if (!isVisibleRace) return;
             ctx.clearRect(0, 0, width, height);
             racers.forEach(r => {
                 r.update();
                 r.draw();
             });
-            requestAnimationFrame(animateRace);
+            animationFrameRaceId = requestAnimationFrame(animateRace);
         }
 
         window.addEventListener('resize', () => { resizeRace(); });
-        
+
+        const raceSection = raceCanvas.closest('header') || raceCanvas;
+        const raceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisibleRace = entry.isIntersecting;
+                if (isVisibleRace) {
+                    if (!animationFrameRaceId) {
+                        animationFrameRaceId = requestAnimationFrame(animateRace);
+                    }
+                } else {
+                    if (animationFrameRaceId) {
+                        cancelAnimationFrame(animationFrameRaceId);
+                        animationFrameRaceId = null;
+                    }
+                }
+            });
+        }, { threshold: 0.05 });
+        raceObserver.observe(raceSection);
+
         resizeRace();
         initRacers();
         animateRace();
@@ -186,7 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = vfxCanvas.getContext('2d');
         let width, height;
         let particles = [];
-        const particleCount = 60; // More particles for magic effect
+        const particleCount = 60;
+        let isVisibleVFX = true;
+        let animationFrameVFXId = null;
 
         function resizeVFX() {
             width = vfxCanvas.width = window.innerWidth;
@@ -196,24 +259,23 @@ document.addEventListener('DOMContentLoaded', () => {
         class MagicParticle {
             constructor() {
                 this.reset();
-                this.y = Math.random() * height; // Start anywhere
+                this.y = Math.random() * height;
             }
 
             reset() {
                 this.x = Math.random() * width;
-                this.y = height + Math.random() * 100; // Start below
-                this.speed = Math.random() * 1 + 0.5; 
+                this.y = height + Math.random() * 100;
+                this.speed = Math.random() * 1 + 0.5;
                 this.size = Math.random() * 3 + 1;
                 this.life = Math.random() * 100 + 50;
                 this.opacity = Math.random() * 0.5 + 0.2;
                 this.wobble = Math.random() * Math.PI * 2;
-                
-                // Purple and Gold palette for Magic
+
                 const colors = [
-                    '142, 68, 173',  // Purple
-                    '212, 175, 55',  // Gold
-                    '155, 89, 182',  // Light Purple
-                    '255, 255, 255'  // White
+                    '142, 68, 173',
+                    '212, 175, 55',
+                    '155, 89, 182',
+                    '255, 255, 255'
                 ];
                 this.colorRGB = colors[Math.floor(Math.random() * colors.length)];
             }
@@ -223,25 +285,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.wobble += 0.05;
                 this.x += Math.sin(this.wobble) * 0.5;
                 this.life--;
-                
-                if(this.life < 0 || this.y < -50) {
+
+                if (this.life < 0 || this.y < -50) {
                     this.reset();
                 }
             }
 
             draw() {
                 ctx.beginPath();
-                // Fade out as they go up or die
                 const alpha = Math.min(this.opacity, this.life / 50);
-                
+
                 ctx.fillStyle = `rgba(${this.colorRGB}, ${alpha})`;
                 ctx.shadowBlur = 15;
                 ctx.shadowColor = `rgba(${this.colorRGB}, 0.8)`;
-                
+
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
-                
-                ctx.shadowBlur = 0; // Reset for performance
+
+                ctx.shadowBlur = 0;
             }
         }
 
@@ -253,70 +314,213 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function animateVFX() {
-            ctx.fillStyle = 'rgba(10, 10, 10, 0.1)'; // Trail effect
+            if (!isVisibleVFX) return;
+            ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
             ctx.fillRect(0, 0, width, height);
-            
-            // Composite operation for glowing effect
+
             ctx.globalCompositeOperation = 'lighter';
-            
+
             particles.forEach(p => {
                 p.update();
                 p.draw();
             });
-            
+
             ctx.globalCompositeOperation = 'source-over';
-            requestAnimationFrame(animateVFX);
+            animationFrameVFXId = requestAnimationFrame(animateVFX);
         }
 
         window.addEventListener('resize', () => { resizeVFX(); initVFX(); });
-        
+
+        const vfxSection = vfxCanvas.closest('header') || vfxCanvas;
+        const vfxObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisibleVFX = entry.isIntersecting;
+                if (isVisibleVFX) {
+                    if (!animationFrameVFXId) {
+                        animationFrameVFXId = requestAnimationFrame(animateVFX);
+                    }
+                } else {
+                    if (animationFrameVFXId) {
+                        cancelAnimationFrame(animationFrameVFXId);
+                        animationFrameVFXId = null;
+                    }
+                }
+            });
+        }, { threshold: 0.05 });
+        vfxObserver.observe(vfxSection);
+
         resizeVFX();
         initVFX();
         animateVFX();
     }
 
-    // --- 4. GIF PREVIEW & HOVER ---
+    // --- 4. CARGA DIFERIDA DE GIFS & INTERACCIÓN TÁCTIL (PC + MÓVIL) ---
     const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach(card => {
+
+    function loadCardGif(card) {
         const staticImg = card.querySelector('.project-img');
         const imgContainer = card.querySelector('.image-container');
-        
-        if(staticImg && imgContainer) {
-            const gifSrc = staticImg.getAttribute('data-gif');
+        if (!staticImg || !imgContainer) return;
 
-            if (gifSrc && gifSrc.trim() !== "") {
-                const gifImg = document.createElement('img');
-                gifImg.src = gifSrc;
-                gifImg.classList.add('project-gif'); 
-                gifImg.alt = staticImg.alt + " preview";
-                imgContainer.appendChild(gifImg);
+        // Evitar duplicados
+        if (imgContainer.querySelector('.project-gif')) return;
+
+        const gifSrc = staticImg.getAttribute('data-gif');
+        if (gifSrc && gifSrc.trim() !== '') {
+            const gifImg = document.createElement('img');
+            gifImg.src = gifSrc;
+            gifImg.classList.add('project-gif');
+            gifImg.alt = (staticImg.alt || 'Project') + ' preview';
+            gifImg.decoding = 'async';
+            imgContainer.appendChild(gifImg);
+        }
+    }
+
+    // Carga progresiva cuando las tarjetas están cerca de aparecer en pantalla
+    const cardIntersectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                loadCardGif(entry.target);
+                cardIntersectionObserver.unobserve(entry.target);
             }
+        });
+    }, { rootMargin: '200px 0px 200px 0px' });
+
+    projectCards.forEach(card => {
+        cardIntersectionObserver.observe(card);
+
+        // En PC: Hover instantáneo
+        card.addEventListener('pointerenter', () => {
+            loadCardGif(card);
+        });
+
+        // En Móvil: Tap para desplegar overlay sin romper los enlaces
+        card.addEventListener('click', (e) => {
+            // Si el usuario tocó un enlace interactivo (Play, Video, Code, Itch), dejamos que navegue
+            if (e.target.closest('a') || e.target.closest('button')) {
+                return;
+            }
+
+            const isTouchActive = card.classList.contains('touch-active');
+            projectCards.forEach(c => c.classList.remove('touch-active'));
+
+            if (!isTouchActive) {
+                card.classList.add('touch-active');
+                loadCardGif(card);
+            }
+        });
+    });
+
+    // Cerrar tarjetas activas al pulsar fuera en móvil
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.project-card')) {
+            projectCards.forEach(c => c.classList.remove('touch-active'));
         }
     });
 
-    // --- 4. SCROLL REVEAL & PARALLAX ---
+    // --- 5. OPTIMIZACIÓN DE VÍDEOS VFX (vfx.html) ---
+    const vfxVideos = document.querySelectorAll('.vfx-video');
+    if (vfxVideos.length > 0) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(() => {
+                            video.muted = true;
+                            video.play().catch(() => {});
+                        });
+                    }
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.1 });
+
+        vfxVideos.forEach(v => {
+            v.setAttribute('playsinline', '');
+            v.setAttribute('muted', '');
+            v.muted = true;
+            v.preload = 'metadata';
+            videoObserver.observe(v);
+        });
+    }
+
+    // --- 6. SCROLL REVEAL ---
     const observerOptions = {
         threshold: 0.15,
         rootMargin: "0px 0px -50px 0px"
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // --- 5. MOBILE MENU ---
+    // --- 7. MENÚ MÓVIL RESPONSIVO CON AUTO-CIERRE ---
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        const menuIcon = menuBtn.querySelector('i');
+
+        const toggleMobileMenu = (forceOpen) => {
+            const isCurrentlyHidden = mobileMenu.classList.contains('hidden');
+            const shouldOpen = forceOpen !== undefined ? forceOpen : isCurrentlyHidden;
+
+            if (shouldOpen) {
+                mobileMenu.classList.remove('hidden');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            } else {
+                mobileMenu.classList.add('hidden');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            }
+        };
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+
+        // Auto-cierre al hacer clic en cualquier enlace del menú móvil
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMobileMenu(false);
+            });
+        });
+
+        // Cerrar si se pulsa fuera de la barra de navegación
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                toggleMobileMenu(false);
+            }
+        });
+    }
+
+    // --- 8. SOMBRA DINÁMICA DEL NAVBAR AL HACER SCROLL ---
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                navbar.classList.add('bg-black/90', 'shadow-xl');
+                navbar.classList.remove('bg-black/70');
+            } else {
+                navbar.classList.remove('bg-black/90', 'shadow-xl');
+                navbar.classList.add('bg-black/70');
+            }
+        }, { passive: true });
     }
 });

@@ -74,9 +74,11 @@ body {
     transform: translateZ(0);
 }
 
-/* Hover effects */
-.project-card:hover, .achievement-card:hover {
-    transform: translateY(-10px);
+/* Hover & Touch Active effects */
+.project-card:hover, 
+.project-card.touch-active,
+.achievement-card:hover {
+    transform: translateY(-8px);
     box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.15);
     border-color: rgba(212, 175, 55, 0.3);
     z-index: 20;
@@ -116,11 +118,11 @@ body {
     transition: opacity 0.5s ease, transform 0.7s ease;
     opacity: 1;
     z-index: 1;
-    
-    /* CORRECCIÓN CRUCIAL: Mantiene el Pixel Art nítido y evita borrosidad */
-    image-rendering: pixelated; 
-    /* Fix para evitar parpadeos en transformaciones */
     backface-visibility: hidden;
+}
+
+.project-img.pixelated {
+    image-rendering: pixelated;
 }
 
 .project-gif {
@@ -135,8 +137,6 @@ body {
     opacity: 0; 
     transition: opacity 0.5s ease;
     z-index: 2; 
-    /* También aplicamos pixelated por si acaso */
-    image-rendering: pixelated;
 }
 
 /* CLASE ESPECIAL PARA VIDEOS DE VFX (Alta Calidad) */
@@ -147,14 +147,16 @@ body {
     image-rendering: auto !important; /* Reset pixelated for smooth video */
 }
 
-/* --- INTERACCIÓN HOVER --- */
-.project-card:hover .project-img {
+/* --- INTERACCIÓN HOVER Y TOUCH --- */
+.project-card:hover .project-img,
+.project-card.touch-active .project-img {
     opacity: 0; 
     transform: scale(1.05); 
 }
 
-.project-card:hover .project-gif {
-    opacity: 1;
+.project-card:hover .project-gif,
+.project-card.touch-active .project-gif {
+    opacity: 1; 
 }
 
 /* --- DESCRIPCIÓN OVERLAY --- */
@@ -170,6 +172,7 @@ body {
     
     background: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-top: 1px solid rgba(212, 175, 55, 0.2); 
     
     padding: 1.5rem;
@@ -180,9 +183,11 @@ body {
     justify-content: flex-start;
     
     overflow-y: auto; 
+    -webkit-overflow-scrolling: touch;
 }
 
-.project-card:hover .project-desc-overlay {
+.project-card:hover .project-desc-overlay,
+.project-card.touch-active .project-desc-overlay {
     transform: translateY(0);
 }
 
@@ -198,7 +203,8 @@ body {
     pointer-events: none; 
 }
 
-.project-card:hover .card-content-initial {
+.project-card:hover .card-content-initial,
+.project-card.touch-active .card-content-initial {
     opacity: 0; 
 }
 
