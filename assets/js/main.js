@@ -420,50 +420,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 4.1 VÍDEOS EN TRABAJO EN PROGRESO (index.html) ---
     const wipCards = document.querySelectorAll('.wip-card');
-    if (wipCards.length > 0) {
-        const wipObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const video = entry.target.querySelector('video');
-                if (!video) return;
-                if (entry.isIntersecting) {
-                    const p = video.play();
-                    if (p !== undefined) p.catch(() => {});
-                } else {
-                    video.pause();
-                }
-            });
-        }, { threshold: 0.35 });
+    wipCards.forEach(card => {
+        const video = card.querySelector('.wip-video');
+        if (!video) return;
 
-        wipCards.forEach(card => {
-            wipObserver.observe(card);
-            const video = card.querySelector('video');
-            if (video) {
-                // En PC: Prioridad de reproducción instantánea al pasar el ratón
-                card.addEventListener('pointerenter', () => {
-                    const p = video.play();
-                    if (p !== undefined) p.catch(() => {});
-                });
+        // En PC: Al pasar el ratón, reproduce el vídeo sobre el cartel
+        card.addEventListener('pointerenter', () => {
+            const p = video.play();
+            if (p !== undefined) p.catch(() => {});
+        });
+
+        // Al salir el ratón, pausa el vídeo y vuelve a verse el cartel
+        card.addEventListener('pointerleave', () => {
+            video.pause();
+        });
+
+        // En móvil: Tap para alternar entre ver el cartel o ver el vídeo en movimiento
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a') || e.target.closest('button')) return;
+            const isTouchActive = card.classList.contains('touch-active');
+            wipCards.forEach(c => {
+                c.classList.remove('touch-active');
+                const v = c.querySelector('.wip-video');
+                if (v) v.pause();
+            });
+            if (!isTouchActive) {
+                card.classList.add('touch-active');
+                video.play().catch(() => {});
             }
         });
-    }
+    });
 
     // --- 5. OPTIMIZACIÓN DE VÍDEOS VFX (vfx.html) ---
     const vfxVideos = document.querySelectorAll('.vfx-video');
     if (vfxVideos.length > 0) {
-        // Observer inteligente: Solo reproduce vídeos cuando están realmente en pantalla (umbral 0.35)
-        // Evita que 6-9 vídeos compitan a la vez por los decodificadores de la GPU
+        // Asegurar atributos nativos de reproducción fluida
+        vfxVideos.forEach(v => {
+            v.setAttribute('autoplay', '');
+            v.setAttribute('loop', '');
+            v.setAttribute('muted', '');
+            v.setAttribute('playsinline', '');
+            v.muted = true;
+        });
+
+        // Observer con margen amplio (400px):
+        // NUNCA pausa ningún vídeo mientras esté visible en pantalla.
+        // Solo suspende los vídeos que quedan muy lejos del scroll para no saturar memoria.
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const video = entry.target;
                 if (entry.isIntersecting) {
                     if (video.paused) {
-                        const playPromise = video.play();
-                        if (playPromise !== undefined) {
-                            playPromise.catch(() => {
-                                video.muted = true;
-                                video.play().catch(() => {});
-                            });
-                        }
+                        video.play().catch(() => {});
                     }
                 } else {
                     if (!video.paused) {
@@ -471,32 +479,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             });
-        }, { threshold: 0.35, rootMargin: '0px 0px -50px 0px' });
+        }, { rootMargin: '400px 0px 400px 0px', threshold: 0 });
 
-        vfxVideos.forEach(v => {
-            v.setAttribute('playsinline', '');
-            v.setAttribute('muted', '');
-            v.muted = true;
-            v.preload = 'metadata';
-            videoObserver.observe(v);
+        vfxVideos.forEach(v => videoObserver.observe(v));
 
-            // En PC: Al pasar el cursor por encima, garantiza reproducción inmediata
-            const parentCard = v.closest('.vfx-card');
-            if (parentCard) {
-                parentCard.addEventListener('pointerenter', () => {
-                    if (v.paused) {
-                        const p = v.play();
-                        if (p !== undefined) p.catch(() => {});
-                    }
-                });
-            }
-        });
-
-        // Pausar todos los vídeos en segundo plano si el usuario cambia de pestaña
+        // Pausar vídeos si se minimiza o cambia de pestaña para ahorrar batería
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
                 vfxVideos.forEach(v => {
                     if (!v.paused) v.pause();
+                });
+            } else {
+                vfxVideos.forEach(v => {
+                    if (v.paused) v.play().catch(() => {});
                 });
             }
         });

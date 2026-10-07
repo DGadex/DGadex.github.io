@@ -150,6 +150,16 @@ body {
     box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.2);
 }
 
+.wip-card:hover .wip-video,
+.wip-card.touch-active .wip-video {
+    opacity: 1;
+}
+
+.wip-card:hover .wip-preview-badge,
+.wip-card.touch-active .wip-preview-badge {
+    opacity: 0;
+}
+
 /* CLASE ESPECIAL PARA VIDEOS DE VFX (Alta Calidad) */
 .vfx-video {
     width: 100%;
