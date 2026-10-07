@@ -130,13 +130,24 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 45%; 
-    object-fit: contain; 
+    height: 48%; 
+    object-fit: cover; 
     object-position: center;
     background-color: #000; 
     opacity: 0; 
     transition: opacity 0.5s ease;
     z-index: 2; 
+}
+
+/* CARDS DE TRABAJO EN PROGRESO (WIP) */
+.wip-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.wip-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.2);
 }
 
 /* CLASE ESPECIAL PARA VIDEOS DE VFX (Alta Calidad) */
