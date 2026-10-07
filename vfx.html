@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edward Mena | VFX Artist</title>
+    <meta name="description" content="Visual Effects Portfolio of Edward Mena - Real-time VFX in Unity and Unreal Engine">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,9 +23,10 @@
                         'g-dark': '#111111',
                         'g-card': '#1a1a1a',
                         'g-gold': '#D4AF37',
+                        'g-gold-hover': '#F4C430',
                         'g-red': '#C41E3A',
                         'g-gray': '#888888',
-                        'g-purple': '#8e44ad', /* New accent for VFX */
+                        'g-purple': '#8e44ad',
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
@@ -52,7 +54,7 @@
                 <a href="formula-student.html" class="hover:text-g-red transition-colors py-2">Formula Student</a>
                 <a href="index.html#contact" class="hover:text-g-gold transition-colors py-2">Contact</a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none"><i
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Toggle navigation"><i
                     class="fas fa-bars"></i></button>
         </div>
         <div id="mobile-menu"
@@ -77,294 +79,559 @@
         <div class="hero-content text-center px-4 z-20">
             <div
                 class="mb-4 inline-block border border-g-purple/50 bg-g-purple/10 px-4 py-1 rounded-full backdrop-blur-sm reveal">
-                <span class="text-g-purple text-xs font-bold tracking-[0.2em] uppercase">Visual Magic</span>
+                <span class="text-g-purple text-xs font-bold tracking-[0.2em] uppercase">Visual Magic & Shaders</span>
             </div>
             <h1 class="text-5xl md:text-8xl font-serif font-bold text-white mb-6 leading-tight reveal delay-100">
                 VISUAL <br> <span class="text-outline italic">EFFECTS</span>
             </h1>
             <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base tracking-wide reveal delay-200">
-                Crafting immersive visual experiences through particles, shaders, and light.
+                Crafting real-time visual experiences through GPU particles, procedural shaders, and lighting.
             </p>
         </div>
     </header>
 
-    <!-- INTRO SECTION -->
-    <section class="py-16 px-6 relative bg-g-black">
-        <div class="max-w-screen-xl mx-auto text-center reveal">
-            <h2 class="text-3xl font-serif font-bold mb-6">My <span class="text-g-gold">VFX Showcase</span></h2>
-            <div class="h-1 w-20 bg-g-purple mx-auto mb-8"></div>
-            <p class="text-gray-300 leading-loose max-w-2xl mx-auto text-lg">
-                This is my dedicated VFX page. Here I will upload and showcase the visual effects I create,
-                experimenting with different engines and techniques. Take a look at my latest work in Unity and Unreal
-                Engine.
-            </p>
+    <!-- FILTER BAR -->
+    <section class="py-8 bg-g-black border-y border-white/5 sticky top-16 z-40 backdrop-blur-md bg-black/80">
+        <div class="max-w-screen-2xl mx-auto px-6 flex flex-wrap items-center justify-center gap-3">
+            <button class="filter-btn active border border-white/20 text-gray-400 hover:text-white rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider"
+                data-filter="all">All Works</button>
+            <button class="filter-btn border border-white/20 text-gray-400 hover:text-white rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider"
+                data-filter="production">Production & Advanced</button>
+            <button class="filter-btn border border-white/20 text-gray-400 hover:text-white rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider"
+                data-filter="unity">Unity VFX</button>
+            <button class="filter-btn border border-white/20 text-gray-400 hover:text-white rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider"
+                data-filter="unreal">Unreal Engine</button>
+            <button class="filter-btn border border-white/20 text-gray-400 hover:text-white rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider"
+                data-filter="gamejam">Game Jam R&D</button>
         </div>
     </section>
 
-    <!-- UNITY SECTION -->
-    <section class="py-20 bg-g-dark">
-        <div class="max-w-screen-2xl mx-auto px-6">
-            <div class="flex items-center justify-between mb-8 reveal">
-                <div>
-                    <span class="text-white/50 text-xs font-bold uppercase tracking-widest">Engine</span>
-                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-white mt-2">Unity <span
-                            class="text-g-gold">VFX</span></h3>
-                </div>
-                <i class="fab fa-unity text-5xl text-white/10"></i>
-            </div>
-
-            <!-- Game Jam Disclaimer -->
-            <div class="mb-12 border-l-4 border-g-gold bg-g-gold/5 p-6 rounded-r-lg max-w-3xl reveal">
-                <p class="text-g-gold font-bold text-xs uppercase tracking-widest mb-2"><i
-                        class="fas fa-exclamation-triangle mr-2"></i> Game Jam Projects</p>
-                <p class="text-gray-400 text-sm italic">
-                    The following effects (Goblinmancer) were created during a 48-hour Game Jam. While I'm proud of the
-                    result given the time constraints, I am aware there is significant room for polish and optimization.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                <!-- BloodFINAL -->
-                <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end">
-                    <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/BloodFINAL.mp4" autoplay loop muted playsinline
-                            class="vfx-video"></video>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
-                    </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Blood Splash</h4>
-                        <p class="text-g-gold text-[10px] uppercase tracking-widest">Goblinmancer</p>
-                    </div>
-                </article>
-
-                <!-- DeathFINAL -->
-                <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
-                    style="transition-delay: 50ms;">
-                    <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/DeathFINAL.mp4" autoplay loop muted playsinline
-                            class="vfx-video"></video>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
-                    </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Enemy Death</h4>
-                        <p class="text-g-gold text-[10px] uppercase tracking-widest">Goblinmancer</p>
-                    </div>
-                </article>
-
-                <!-- DeathJAMFINAL -->
-                <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
-                    style="transition-delay: 100ms;">
-                    <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/DeathJAMFINAL.mp4" autoplay loop muted playsinline
-                            class="vfx-video"></video>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
-                    </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Alternative Death</h4>
-                        <p class="text-g-gold text-[10px] uppercase tracking-widest">Game Jam Ver.</p>
-                    </div>
-                </article>
-
-                <!-- FireballFINAL -->
-                <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
-                    style="transition-delay: 150ms;">
-                    <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/FireballFINAL.mp4" autoplay loop muted playsinline
-                            class="vfx-video"></video>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
-                    </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Fireball</h4>
-                        <p class="text-g-gold text-[10px] uppercase tracking-widest">Goblinmancer</p>
-                    </div>
-                </article>
-
-                <!-- HealingFINAL -->
-                <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end">
-                    <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/HealingFINAL.mp4" autoplay loop muted playsinline
-                            class="vfx-video"></video>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
-                    </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Healing Aura</h4>
-                        <p class="text-g-gold text-[10px] uppercase tracking-widest">Goblinmancer</p>
-                    </div>
-                </article>
-
-                <!-- RayoFINAL -->
-                <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
-                    style="transition-delay: 50ms;">
-                    <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/RayoFINAL.mp4" autoplay loop muted playsinline class="vfx-video"></video>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
-                    </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Lightning Strike</h4>
-                        <p class="text-g-gold text-[10px] uppercase tracking-widest">Goblinmancer</p>
-                    </div>
-                </article>
-            </div>
-
-            <!-- TFG Section -->
-            <div class="mb-8 mt-16 reveal">
-                <span class="text-white/50 text-xs font-bold uppercase tracking-widest">Bachelor Thesis</span>
-                <h3 class="text-2xl font-serif font-bold text-white mt-2">Neon Rush <span class="text-g-gold">VFX</span>
-                </h3>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <!-- MetaFINAL -->
-                <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-video flex flex-col justify-end">
-                    <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/MetaFINAL.mp4" autoplay loop muted playsinline class="vfx-video"></video>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
-                    </div>
-                    <div class="relative z-20 p-6">
-                        <h4 class="text-xl font-bold text-white mb-1">Finish Line</h4>
-                        <p class="text-g-gold text-[10px] uppercase tracking-widest">Thesis Project</p>
-                    </div>
-                </article>
-
-                <!-- TFGFINAL -->
-                <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-video flex flex-col justify-end"
-                    style="transition-delay: 100ms;">
-                    <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/TFGFINAL.mp4" autoplay loop muted playsinline class="vfx-video"></video>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
-                    </div>
-                    <div class="relative z-20 p-6">
-                        <h4 class="text-xl font-bold text-white mb-1">Speed & Drifting</h4>
-                        <p class="text-g-gold text-[10px] uppercase tracking-widest">Thesis Project</p>
-                    </div>
-                </article>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- UNREAL SECTION -->
-    <section class="py-20 bg-g-black">
+    <!-- SECTION 1: PRODUCTION & FEATURED VFX -->
+    <section class="py-20 bg-g-dark vfx-section" data-section-category="production">
         <div class="max-w-screen-2xl mx-auto px-6">
             <div class="flex items-center justify-between mb-12 reveal">
                 <div>
-                    <span class="text-white/50 text-xs font-bold uppercase tracking-widest">Engine</span>
-                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-white mt-2">Unreal <span
-                            class="text-g-red">VFX</span></h3>
+                    <span class="text-g-gold text-xs font-bold uppercase tracking-widest">Commercial & Thesis Work</span>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-white mt-2">Production <span
+                            class="text-g-gold">VFX</span></h3>
                 </div>
-                <!-- FontAwesome doesn't have an unreal icon by default usually, using a placeholder or circle -->
-                <div class="text-5xl font-bold text-white/10 tracking-tighter">UNREAL</div>
+                <div class="flex items-center gap-4 text-3xl text-white/20">
+                    <i class="fab fa-unity"></i>
+                    <i class="fab fa-steam"></i>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-                <!-- BurstGemasFINAL -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- 1. Building Destroy -->
                 <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end">
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-video flex flex-col justify-end"
+                    data-category="production unity"
+                    data-video="images/vfx/BuildingDestroy.mp4"
+                    data-title="Building Collapse & Smoke"
+                    data-engine="Unity"
+                    data-tool="VFX Graph"
+                    data-context="GoblinMancer (Reboot)"
+                    data-desc="Building destruction sequence created with Unity VFX Graph for the GoblinMancer commercial reboot. Upon structure collapse, it generates shockwave impact particles, leaving a ground ash decal and an organic smoke trail rising and dissipating into the air.">
                     <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/BurstGemasFINAL.mp4" autoplay loop muted playsinline
-                            class="vfx-video"></video>
+                        <video src="images/vfx/BuildingDestroy.mp4" poster="images/vfx/BuildingDestroy.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
                     </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-14 h-14 rounded-full bg-g-gold/90 text-black flex items-center justify-center text-lg transform group-hover:scale-110 transition-transform">
+                            <i class="fas fa-expand"></i>
+                        </span>
                     </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Gem Burst</h4>
-                        <p class="text-g-red text-[10px] uppercase tracking-widest">Standalone</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-black/40 to-transparent z-10 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <div class="flex gap-2 mb-2">
+                            <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold/60 px-2 py-0.5">VFX Graph</span>
+                            <span class="text-blue-400 text-[10px] font-bold uppercase tracking-wider border border-blue-400/40 px-2 py-0.5">GoblinMancer Reboot</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-1">Building Collapse & Smoke</h4>
+                        <p class="text-gray-400 text-xs">Collapse, ground ash and rising smoke trail</p>
                     </div>
                 </article>
 
-                <!-- BurstOroFINAL -->
+                <!-- 2. Building Spawn -->
                 <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
-                    style="transition-delay: 50ms;">
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-video flex flex-col justify-end"
+                    style="transition-delay: 50ms;"
+                    data-category="production unity"
+                    data-video="images/vfx/SpawnBuilding.mp4"
+                    data-title="Soul Portal & Building Spawn"
+                    data-engine="Unity"
+                    data-tool="VFX Graph"
+                    data-context="GoblinMancer (Reboot)"
+                    data-desc="Summoning effect created with Unity VFX Graph for GoblinMancer. A dark necromantic portal opens on the ground, releasing swirling ethereal soul particles that spiral upward as the structure emerges from the subterranean plane.">
                     <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/BurstOroFINAL.mp4" autoplay loop muted playsinline
-                            class="vfx-video"></video>
+                        <video src="images/vfx/SpawnBuilding.mp4" poster="images/vfx/SpawnBuilding.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
                     </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-14 h-14 rounded-full bg-g-gold/90 text-black flex items-center justify-center text-lg transform group-hover:scale-110 transition-transform">
+                            <i class="fas fa-expand"></i>
+                        </span>
                     </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Gold Burst</h4>
-                        <p class="text-g-red text-[10px] uppercase tracking-widest">Standalone</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-black/40 to-transparent z-10 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <div class="flex gap-2 mb-2">
+                            <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold/60 px-2 py-0.5">VFX Graph</span>
+                            <span class="text-blue-400 text-[10px] font-bold uppercase tracking-wider border border-blue-400/40 px-2 py-0.5">GoblinMancer Reboot</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-1">Soul Portal & Building Spawn</h4>
+                        <p class="text-gray-400 text-xs">Ground portal with ascending swirling souls</p>
                     </div>
                 </article>
 
-                <!-- CofreFINAL -->
+                <!-- 3. Fireball Rework -->
                 <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
-                    style="transition-delay: 100ms;">
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-video flex flex-col justify-end"
+                    style="transition-delay: 100ms;"
+                    data-category="production unity"
+                    data-video="images/vfx/FireballRework.mp4"
+                    data-title="Fireball (Production Loop)"
+                    data-engine="Unity"
+                    data-tool="VFX Graph & Shaders"
+                    data-context="GoblinMancer (Reboot)"
+                    data-desc="Reworked stylized fireball effect for GoblinMancer. Features high-temperature core glow, chaotic swirling ember turbulence, and a multi-layered fire trail optimized for smooth 60fps performance during intense gameplay rounds.">
                     <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/CofreFINAL.mp4" autoplay loop muted playsinline
-                            class="vfx-video"></video>
+                        <video src="images/vfx/FireballRework.mp4" poster="images/vfx/FireballRework.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
                     </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-14 h-14 rounded-full bg-g-gold/90 text-black flex items-center justify-center text-lg transform group-hover:scale-110 transition-transform">
+                            <i class="fas fa-expand"></i>
+                        </span>
                     </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Loot Chest</h4>
-                        <p class="text-g-red text-[10px] uppercase tracking-widest">Standalone</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-black/40 to-transparent z-10 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <div class="flex gap-2 mb-2">
+                            <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold/60 px-2 py-0.5">VFX Graph</span>
+                            <span class="text-blue-400 text-[10px] font-bold uppercase tracking-wider border border-blue-400/40 px-2 py-0.5">GoblinMancer Reboot</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-1">Fireball (Production Loop)</h4>
+                        <p class="text-gray-400 text-xs">Reworked projectile loop with embers and turbulent trail</p>
                     </div>
                 </article>
 
-                <!-- FwFINAL -->
+                <!-- 4. Camilo Death -->
                 <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
-                    style="transition-delay: 150ms;">
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-video flex flex-col justify-end"
+                    data-category="production unity"
+                    data-video="images/vfx/CamiloDeath.mp4"
+                    data-title="Camilo Ash Dissolution"
+                    data-engine="Unity"
+                    data-tool="Custom Shader & C# Scripts"
+                    data-context="K-Boom!"
+                    data-desc="Custom death sequence developed for K-Boom! (Steam). When Camilo is caught in a blast, a custom dissolve shader driven by C# scripts burns the character away into floating cinder ashes, delivering clear gameplay feedback with a stylized personality.">
                     <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/FwFINAL.mp4" autoplay loop muted playsinline class="vfx-video"></video>
+                        <video src="images/vfx/CamiloDeath.mp4" poster="images/vfx/CamiloDeath.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
                     </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-14 h-14 rounded-full bg-g-gold/90 text-black flex items-center justify-center text-lg transform group-hover:scale-110 transition-transform">
+                            <i class="fas fa-expand"></i>
+                        </span>
                     </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Fireworks</h4>
-                        <p class="text-g-red text-[10px] uppercase tracking-widest">Standalone</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-black/40 to-transparent z-10 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <div class="flex gap-2 mb-2">
+                            <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold/60 px-2 py-0.5">Custom Shaders & Code</span>
+                            <span class="text-g-red text-[10px] font-bold uppercase tracking-wider border border-g-red/40 px-2 py-0.5">K-Boom!</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-1">Camilo Ash Dissolution</h4>
+                        <p class="text-gray-400 text-xs">Character disintegration into falling embers and ash</p>
                     </div>
                 </article>
 
-                <!-- OrbeFINAL -->
+                <!-- 5. Speed & Drifting (Neon Rush) -->
                 <article
-                    class="project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
-                    style="transition-delay: 200ms;">
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-video flex flex-col justify-end"
+                    style="transition-delay: 50ms;"
+                    data-category="production unity"
+                    data-video="images/vfx/TFGFINAL.mp4"
+                    data-title="Speed Distortion & Tire Smoke"
+                    data-engine="Unity"
+                    data-tool="VFX Graph & Post-Process"
+                    data-context="Neon Rush (Thesis)"
+                    data-desc="High-speed feedback and vehicle physics FX created for Neon Rush. Implements dynamic speed-lines, chromatic screen distortion, tire contact particle smoke, and neon light trails reflecting real-time drift dynamics.">
                     <div class="absolute inset-0 z-0">
-                        <video src="images/vfx/OrbeFINAL.mp4" autoplay loop muted playsinline class="vfx-video"></video>
+                        <video src="images/vfx/TFGFINAL.mp4" poster="images/vfx/TFGFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
                     </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-60">
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-14 h-14 rounded-full bg-g-gold/90 text-black flex items-center justify-center text-lg transform group-hover:scale-110 transition-transform">
+                            <i class="fas fa-expand"></i>
+                        </span>
                     </div>
-                    <div class="relative z-20 p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                        <h4 class="text-lg font-bold text-white mb-1">Magic Orb</h4>
-                        <p class="text-g-red text-[10px] uppercase tracking-widest">Standalone</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-black/40 to-transparent z-10 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <div class="flex gap-2 mb-2">
+                            <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold/60 px-2 py-0.5">VFX Graph</span>
+                            <span class="text-white/80 text-[10px] font-bold uppercase tracking-wider border border-white/30 px-2 py-0.5">Neon Rush</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-1">Speed Distortion & Drifting</h4>
+                        <p class="text-gray-400 text-xs">High-speed optical distortion and neon tire smoke</p>
                     </div>
                 </article>
+
+                <!-- 6. Finish Line (Neon Rush) -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-video flex flex-col justify-end"
+                    style="transition-delay: 100ms;"
+                    data-category="production unity"
+                    data-video="images/vfx/MetaFINAL.mp4"
+                    data-title="Finish Line Energy Portal"
+                    data-engine="Unity"
+                    data-tool="Shaders & Particle System"
+                    data-context="Neon Rush (Thesis)"
+                    data-desc="Volumetric glowing archway marking the race finish line. Features custom scrolling UV textures, neon bloom emission, and particle confetti burst on vehicle passage.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/MetaFINAL.mp4" poster="images/vfx/MetaFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-14 h-14 rounded-full bg-g-gold/90 text-black flex items-center justify-center text-lg transform group-hover:scale-110 transition-transform">
+                            <i class="fas fa-expand"></i>
+                        </span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-black/40 to-transparent z-10 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <div class="flex gap-2 mb-2">
+                            <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider border border-g-gold/60 px-2 py-0.5">Shaders</span>
+                            <span class="text-white/80 text-[10px] font-bold uppercase tracking-wider border border-white/30 px-2 py-0.5">Neon Rush</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-1">Finish Line Portal</h4>
+                        <p class="text-gray-400 text-xs">Volumetric UV energy archway</p>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
+
+    <!-- SECTION 2: GAME JAM R&D VFX -->
+    <section class="py-20 bg-g-black vfx-section border-t border-white/5" data-section-category="gamejam">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="flex items-center justify-between mb-8 reveal">
+                <div>
+                    <span class="text-g-gold text-xs font-bold uppercase tracking-widest">48-Hour Rapid Prototyping</span>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-white mt-2">Game Jam <span
+                            class="text-g-purple">R&D VFX</span></h3>
+                </div>
+                <i class="fas fa-stopwatch text-4xl text-white/10"></i>
+            </div>
+
+            <!-- Game Jam Disclaimer -->
+            <div class="mb-12 border-l-4 border-g-purple bg-g-purple/5 p-6 rounded-r-lg max-w-3xl reveal">
+                <p class="text-g-purple font-bold text-xs uppercase tracking-widest mb-2"><i
+                        class="fas fa-info-circle mr-2"></i> 48-Hour Game Jam Context</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    The following effects were developed during the 48-hour <em>Jamsepticeye 25'</em> Game Jam for the original Goblinmancer prototype. They highlight quick aesthetic problem-solving, rapid visual feedback, and agile shader implementation under strict time limits.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+
+                <!-- Blood Splash -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    data-category="gamejam unity"
+                    data-video="images/vfx/BloodFINAL.mp4"
+                    data-title="Blood Splash"
+                    data-engine="Unity"
+                    data-tool="Shuriken Particles"
+                    data-context="Goblinmancer (OG Jam)"
+                    data-desc="Spooky stylized hit impact blood splatter created within 48h for enemy damage feedback.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/BloodFINAL.mp4" poster="images/vfx/BloodFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-10 h-10 rounded-full bg-g-purple text-white flex items-center justify-center text-sm transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-4 pointer-events-none">
+                        <h4 class="text-base font-bold text-white mb-0.5">Blood Splash</h4>
+                        <p class="text-g-purple text-[10px] uppercase tracking-widest">Goblinmancer OG</p>
+                    </div>
+                </article>
+
+                <!-- Enemy Death -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    style="transition-delay: 50ms;"
+                    data-category="gamejam unity"
+                    data-video="images/vfx/DeathFINAL.mp4"
+                    data-title="Enemy Death Burst"
+                    data-engine="Unity"
+                    data-tool="Shuriken Particles & Shaders"
+                    data-context="Goblinmancer (OG Jam)"
+                    data-desc="Enemy death elimination explosion with cartoon ghost wisps.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/DeathFINAL.mp4" poster="images/vfx/DeathFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-10 h-10 rounded-full bg-g-purple text-white flex items-center justify-center text-sm transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-4 pointer-events-none">
+                        <h4 class="text-base font-bold text-white mb-0.5">Enemy Death</h4>
+                        <p class="text-g-purple text-[10px] uppercase tracking-widest">Goblinmancer OG</p>
+                    </div>
+                </article>
+
+                <!-- Alternative Death -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    style="transition-delay: 100ms;"
+                    data-category="gamejam unity"
+                    data-video="images/vfx/DeathJAMFINAL.mp4"
+                    data-title="Alternative Death FX"
+                    data-engine="Unity"
+                    data-tool="Shuriken Particles"
+                    data-context="Goblinmancer (OG Jam)"
+                    data-desc="Alternate elimination feedback designed for elite enemies during the game jam.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/DeathJAMFINAL.mp4" poster="images/vfx/DeathJAMFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-10 h-10 rounded-full bg-g-purple text-white flex items-center justify-center text-sm transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-4 pointer-events-none">
+                        <h4 class="text-base font-bold text-white mb-0.5">Alt Death</h4>
+                        <p class="text-g-purple text-[10px] uppercase tracking-widest">Goblinmancer OG</p>
+                    </div>
+                </article>
+
+                <!-- Fireball (Classic) -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    style="transition-delay: 150ms;"
+                    data-category="gamejam unity"
+                    data-video="images/vfx/FireballFINAL.mp4"
+                    data-title="Fireball (Classic Jam)"
+                    data-engine="Unity"
+                    data-tool="Shuriken Particles"
+                    data-context="Goblinmancer (OG Jam)"
+                    data-desc="The original projectile fireball implemented in 48h to test gameplay balance and tower targeting.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/FireballFINAL.mp4" poster="images/vfx/FireballFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-10 h-10 rounded-full bg-g-purple text-white flex items-center justify-center text-sm transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-4 pointer-events-none">
+                        <h4 class="text-base font-bold text-white mb-0.5">Classic Fireball</h4>
+                        <p class="text-g-purple text-[10px] uppercase tracking-widest">Goblinmancer OG</p>
+                    </div>
+                </article>
+
+                <!-- Healing Aura -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    style="transition-delay: 200ms;"
+                    data-category="gamejam unity"
+                    data-video="images/vfx/HealingFINAL.mp4"
+                    data-title="Healing Aura"
+                    data-engine="Unity"
+                    data-tool="Shuriken Particles & Shaders"
+                    data-context="Goblinmancer (OG Jam)"
+                    data-desc="Area-of-effect healing zone with gentle green sparkles and upward rising life waves.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/HealingFINAL.mp4" poster="images/vfx/HealingFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-10 h-10 rounded-full bg-g-purple text-white flex items-center justify-center text-sm transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-4 pointer-events-none">
+                        <h4 class="text-base font-bold text-white mb-0.5">Healing Aura</h4>
+                        <p class="text-g-purple text-[10px] uppercase tracking-widest">Goblinmancer OG</p>
+                    </div>
+                </article>
+
+                <!-- Lightning Strike -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    style="transition-delay: 250ms;"
+                    data-category="gamejam unity"
+                    data-video="images/vfx/RayoFINAL.mp4"
+                    data-title="Lightning Strike"
+                    data-engine="Unity"
+                    data-tool="Procedural Mesh & Shaders"
+                    data-context="Goblinmancer (OG Jam)"
+                    data-desc="High-impact electrical discharge striking down from the sky with instant flash and residual electric arcs.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/RayoFINAL.mp4" poster="images/vfx/RayoFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-10 h-10 rounded-full bg-g-purple text-white flex items-center justify-center text-sm transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-4 pointer-events-none">
+                        <h4 class="text-base font-bold text-white mb-0.5">Lightning</h4>
+                        <p class="text-g-purple text-[10px] uppercase tracking-widest">Goblinmancer OG</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: UNREAL ENGINE VFX -->
+    <section class="py-20 bg-g-dark vfx-section border-t border-white/5" data-section-category="unreal">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="flex items-center justify-between mb-12 reveal">
+                <div>
+                    <span class="text-white/50 text-xs font-bold uppercase tracking-widest">Niagara & Real-Time Exploration</span>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-white mt-2">Unreal <span
+                            class="text-g-red">VFX</span></h3>
+                </div>
+                <div class="text-4xl font-bold text-white/10 tracking-tighter">UNREAL ENGINE</div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+
+                <!-- Gem Burst -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    data-category="unreal"
+                    data-video="images/vfx/BurstGemasFINAL.mp4"
+                    data-title="Gem Burst Collection"
+                    data-engine="Unreal Engine"
+                    data-tool="Niagara"
+                    data-context="Standalone R&D"
+                    data-desc="Loot pickup effect with radiant crystal gems bouncing dynamically with velocity and sparkle dissipation.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/BurstGemasFINAL.mp4" poster="images/vfx/BurstGemasFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-12 h-12 rounded-full bg-g-red text-white flex items-center justify-center text-base transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <h4 class="text-lg font-bold text-white mb-1">Gem Burst</h4>
+                        <p class="text-g-red text-[10px] uppercase tracking-widest">Niagara FX</p>
+                    </div>
+                </article>
+
+                <!-- Gold Burst -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    style="transition-delay: 50ms;"
+                    data-category="unreal"
+                    data-video="images/vfx/BurstOroFINAL.mp4"
+                    data-title="Gold Coin Shower"
+                    data-engine="Unreal Engine"
+                    data-tool="Niagara"
+                    data-context="Standalone R&D"
+                    data-desc="Reward feedback particle shower of golden coins scattering with physics-based velocity.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/BurstOroFINAL.mp4" poster="images/vfx/BurstOroFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-12 h-12 rounded-full bg-g-red text-white flex items-center justify-center text-base transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <h4 class="text-lg font-bold text-white mb-1">Gold Burst</h4>
+                        <p class="text-g-red text-[10px] uppercase tracking-widest">Niagara FX</p>
+                    </div>
+                </article>
+
+                <!-- Loot Chest -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    style="transition-delay: 100ms;"
+                    data-category="unreal"
+                    data-video="images/vfx/CofreFINAL.mp4"
+                    data-title="Loot Chest Opening"
+                    data-engine="Unreal Engine"
+                    data-tool="Niagara & Sequencer"
+                    data-context="Standalone R&D"
+                    data-desc="Cinematic treasure chest opening with golden volumetric godrays, hovering dust motes, and light flare.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/CofreFINAL.mp4" poster="images/vfx/CofreFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-12 h-12 rounded-full bg-g-red text-white flex items-center justify-center text-base transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <h4 class="text-lg font-bold text-white mb-1">Loot Chest</h4>
+                        <p class="text-g-red text-[10px] uppercase tracking-widest">Niagara FX</p>
+                    </div>
+                </article>
+
+                <!-- Fireworks -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    style="transition-delay: 150ms;"
+                    data-category="unreal"
+                    data-video="images/vfx/FwFINAL.mp4"
+                    data-title="Celebration Fireworks"
+                    data-engine="Unreal Engine"
+                    data-tool="Niagara"
+                    data-context="Standalone R&D"
+                    data-desc="Multi-stage festive fireworks explosion with ascending rocket trails, secondary shell bursts and falling sparkles.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/FwFINAL.mp4" poster="images/vfx/FwFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-12 h-12 rounded-full bg-g-red text-white flex items-center justify-center text-base transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <h4 class="text-lg font-bold text-white mb-1">Fireworks</h4>
+                        <p class="text-g-red text-[10px] uppercase tracking-widest">Niagara FX</p>
+                    </div>
+                </article>
+
+                <!-- Magic Orb -->
+                <article
+                    class="vfx-card project-card reveal glass-panel overflow-hidden group relative aspect-square flex flex-col justify-end"
+                    style="transition-delay: 200ms;"
+                    data-category="unreal"
+                    data-video="images/vfx/OrbeFINAL.mp4"
+                    data-title="Ethereal Magic Orb"
+                    data-engine="Unreal Engine"
+                    data-tool="Niagara & Shaders"
+                    data-context="Standalone R&D"
+                    data-desc="Floating arcane orb with pulsating internal plasma filaments, distortion refraction, and orbiting micro-particles.">
+                    <div class="absolute inset-0 z-0">
+                        <video src="images/vfx/OrbeFINAL.mp4" poster="images/vfx/OrbeFINAL.jpg" loop muted playsinline preload="metadata" class="vfx-video"></video>
+                    </div>
+                    <div class="vfx-play-overlay absolute inset-0 z-10 flex items-center justify-center">
+                        <span class="w-12 h-12 rounded-full bg-g-red text-white flex items-center justify-center text-base transform group-hover:scale-110 transition-transform"><i class="fas fa-expand"></i></span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-g-black via-transparent to-transparent z-10 opacity-70 pointer-events-none"></div>
+                    <div class="relative z-20 p-6 pointer-events-none">
+                        <h4 class="text-lg font-bold text-white mb-1">Magic Orb</h4>
+                        <p class="text-g-red text-[10px] uppercase tracking-widest">Niagara FX</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CINEMA LIGHTBOX MODAL -->
+    <div id="vfx-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8">
+        <div class="relative max-w-4xl w-full bg-g-dark border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <button id="modal-close-btn" class="absolute top-4 right-4 z-30 text-white/70 hover:text-white bg-black/60 hover:bg-black/90 w-11 h-11 rounded-full flex items-center justify-center text-xl transition-all border border-white/10">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="w-full bg-black flex items-center justify-center relative aspect-video">
+                <video id="modal-video" controls loop playsinline class="w-full h-full object-contain"></video>
+            </div>
+            <div class="p-6 md:p-8 overflow-y-auto">
+                <div class="flex flex-wrap gap-2 mb-3" id="modal-tags"></div>
+                <h3 id="modal-title" class="text-2xl md:text-3xl font-serif font-bold text-white mb-3"></h3>
+                <p id="modal-desc" class="text-gray-300 text-sm md:text-base leading-relaxed"></p>
+                <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between text-xs text-gray-500 gap-2">
+                    <span id="modal-context" class="text-gray-400 font-medium"></span>
+                    <span class="text-g-gold font-bold uppercase tracking-wider">Visual Effects by Edward Mena</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="py-8 bg-black text-center border-t border-white/5">

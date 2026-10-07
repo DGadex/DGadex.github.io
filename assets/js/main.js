@@ -523,4 +523,124 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, { passive: true });
     }
+
+    // --- 9. FILTRO DE CATEGORÍAS EN VFX (vfx.html) ---
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const vfxCards = document.querySelectorAll('.vfx-card');
+    const vfxSections = document.querySelectorAll('.vfx-section');
+
+    if (filterBtns.length > 0 && vfxCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                vfxCards.forEach(card => {
+                    const categories = card.getAttribute('data-category') || '';
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                vfxSections.forEach(section => {
+                    const secCat = section.getAttribute('data-section-category') || '';
+                    if (filter === 'all') {
+                        section.style.display = '';
+                    } else if (filter === 'production' && secCat === 'production') {
+                        section.style.display = '';
+                    } else if (filter === 'gamejam' && secCat === 'gamejam') {
+                        section.style.display = '';
+                    } else if (filter === 'unreal' && secCat === 'unreal') {
+                        section.style.display = '';
+                    } else if (filter === 'unity' && (secCat === 'production' || secCat === 'gamejam')) {
+                        section.style.display = '';
+                    } else {
+                        const hasVisibleCard = Array.from(section.querySelectorAll('.vfx-card')).some(c => c.style.display !== 'none');
+                        section.style.display = hasVisibleCard ? '' : 'none';
+                    }
+                });
+            });
+        });
+    }
+
+    // --- 10. MODAL / LIGHTBOX DE VFX (vfx.html) ---
+    const vfxModal = document.getElementById('vfx-modal');
+    const modalVideo = document.getElementById('modal-video');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalTags = document.getElementById('modal-tags');
+    const modalContext = document.getElementById('modal-context');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    if (vfxModal && modalVideo) {
+        const openModal = (card) => {
+            const videoSrc = card.getAttribute('data-video');
+            const title = card.getAttribute('data-title') || '';
+            const engine = card.getAttribute('data-engine') || '';
+            const tool = card.getAttribute('data-tool') || '';
+            const context = card.getAttribute('data-context') || '';
+            const desc = card.getAttribute('data-desc') || '';
+
+            modalVideo.src = videoSrc;
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modalContext.textContent = context ? `Project: ${context}` : '';
+
+            modalTags.innerHTML = '';
+            if (engine) {
+                const engineSpan = document.createElement('span');
+                engineSpan.className = 'text-g-gold text-xs font-bold uppercase tracking-wider border border-g-gold px-2.5 py-1 rounded';
+                engineSpan.textContent = engine;
+                modalTags.appendChild(engineSpan);
+            }
+            if (tool) {
+                const toolSpan = document.createElement('span');
+                toolSpan.className = 'text-white text-xs font-bold uppercase tracking-wider border border-white/30 px-2.5 py-1 rounded';
+                toolSpan.textContent = tool;
+                modalTags.appendChild(toolSpan);
+            }
+            if (context) {
+                const ctxSpan = document.createElement('span');
+                ctxSpan.className = 'text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-400/40 px-2.5 py-1 rounded';
+                ctxSpan.textContent = context;
+                modalTags.appendChild(ctxSpan);
+            }
+
+            vfxModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            modalVideo.play().catch(() => {});
+        };
+
+        const closeModal = () => {
+            vfxModal.classList.remove('active');
+            modalVideo.pause();
+            modalVideo.src = '';
+            document.body.style.overflow = '';
+        };
+
+        vfxCards.forEach(card => {
+            card.addEventListener('click', () => openModal(card));
+        });
+
+        if (modalCloseBtn) {
+            modalCloseBtn.addEventListener('click', closeModal);
+        }
+
+        vfxModal.addEventListener('click', (e) => {
+            if (e.target === vfxModal) {
+                closeModal();
+            }
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && vfxModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
 });
