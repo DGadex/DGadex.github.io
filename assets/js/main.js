@@ -149,9 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let isVisibleRace = true;
         let animationFrameRaceId = null;
 
+        const raceHeader = raceCanvas.closest('header');
         function resizeRace() {
-            width = raceCanvas.width = window.innerWidth;
-            height = raceCanvas.height = window.innerHeight;
+            width = raceCanvas.width = raceHeader ? raceHeader.offsetWidth : window.innerWidth;
+            height = raceCanvas.height = raceHeader ? raceHeader.offsetHeight : Math.floor(window.innerHeight * 0.7);
         }
 
         class Racer {
@@ -247,13 +248,45 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = vfxCanvas.getContext('2d');
         let width, height;
         let particles = [];
-        const particleCount = 60;
+        const particleCount = 40;
         let isVisibleVFX = true;
         let animationFrameVFXId = null;
 
+        const vfxHeader = vfxCanvas.closest('header');
         function resizeVFX() {
-            width = vfxCanvas.width = window.innerWidth;
-            height = vfxCanvas.height = window.innerHeight;
+            width = vfxCanvas.width = vfxHeader ? vfxHeader.offsetWidth : window.innerWidth;
+            height = vfxCanvas.height = vfxHeader ? vfxHeader.offsetHeight : Math.floor(window.innerHeight * 0.6);
+        }
+
+        const colors = [
+            '142, 68, 173', // Púrpura místico
+            '212, 175, 55',  // Oro cálido
+            '155, 89, 182', // Lavanda
+            '255, 255, 255'  // Blanco chispa
+        ];
+
+        // OPTIMIZACIÓN CRÍTICA:
+        // Pre-renderizar sprites de resplandor (Glow Sprites) en canvas fuera de pantalla una sola vez.
+        // Se elimina por completo 'ctx.shadowBlur' (operación Gaussian blur que colapsaba la GPU/vídeos).
+        // Dibujar un sprite con drawImage se ejecuta en <0.05ms en la GPU en vez de saturar el rasterizador.
+        const glowSprites = {};
+        function createGlowSprites() {
+            colors.forEach(col => {
+                const offscreen = document.createElement('canvas');
+                offscreen.width = 64;
+                offscreen.height = 64;
+                const oCtx = offscreen.getContext('2d');
+
+                const radGrad = oCtx.createRadialGradient(32, 32, 0, 32, 32, 32);
+                radGrad.addColorStop(0, `rgba(${col}, 1)`);
+                radGrad.addColorStop(0.2, `rgba(${col}, 0.8)`);
+                radGrad.addColorStop(0.55, `rgba(${col}, 0.25)`);
+                radGrad.addColorStop(1, `rgba(${col}, 0)`);
+
+                oCtx.fillStyle = radGrad;
+                oCtx.fillRect(0, 0, 64, 64);
+                glowSprites[col] = offscreen;
+            });
         }
 
         class MagicParticle {
@@ -264,45 +297,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
             reset() {
                 this.x = Math.random() * width;
-                this.y = height + Math.random() * 100;
-                this.speed = Math.random() * 1 + 0.5;
-                this.size = Math.random() * 3 + 1;
-                this.life = Math.random() * 100 + 50;
-                this.opacity = Math.random() * 0.5 + 0.2;
+                this.y = height + Math.random() * 40;
+                this.speed = Math.random() * 0.8 + 0.4;
+                this.size = Math.random() * 22 + 10; // Diámetro del halo luminoso
+                this.life = Math.random() * 120 + 60;
+                this.maxLife = this.life;
+                this.opacity = Math.random() * 0.7 + 0.3;
                 this.wobble = Math.random() * Math.PI * 2;
-
-                const colors = [
-                    '142, 68, 173',
-                    '212, 175, 55',
-                    '155, 89, 182',
-                    '255, 255, 255'
-                ];
                 this.colorRGB = colors[Math.floor(Math.random() * colors.length)];
             }
 
             update() {
                 this.y -= this.speed;
-                this.wobble += 0.05;
-                this.x += Math.sin(this.wobble) * 0.5;
+                this.wobble += 0.03;
+                this.x += Math.sin(this.wobble) * 0.4;
                 this.life--;
 
-                if (this.life < 0 || this.y < -50) {
+                if (this.life <= 0 || this.y < -30) {
                     this.reset();
                 }
             }
 
             draw() {
-                ctx.beginPath();
-                const alpha = Math.min(this.opacity, this.life / 50);
+                const sprite = glowSprites[this.colorRGB];
+                if (!sprite) return;
 
-                ctx.fillStyle = `rgba(${this.colorRGB}, ${alpha})`;
-                ctx.shadowBlur = 15;
-                ctx.shadowColor = `rgba(${this.colorRGB}, 0.8)`;
+                // Curva de entrada y salida suave (fade-in / fade-out orgánico)
+                let lifeFactor = 1;
+                const progress = 1 - (this.life / this.maxLife);
+                if (progress < 0.2) {
+                    lifeFactor = progress / 0.2;
+                } else if (progress > 0.7) {
+                    lifeFactor = (1 - progress) / 0.3;
+                }
+                const alpha = this.opacity * Math.max(0, Math.min(1, lifeFactor));
 
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-
-                ctx.shadowBlur = 0;
+                ctx.globalAlpha = alpha;
+                ctx.drawImage(sprite, this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
             }
         }
 
@@ -315,9 +346,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function animateVFX() {
             if (!isVisibleVFX) return;
-            ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
-            ctx.fillRect(0, 0, width, height);
 
+            ctx.clearRect(0, 0, width, height);
             ctx.globalCompositeOperation = 'lighter';
 
             particles.forEach(p => {
@@ -325,6 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 p.draw();
             });
 
+            ctx.globalAlpha = 1;
             ctx.globalCompositeOperation = 'source-over';
             animationFrameVFXId = requestAnimationFrame(animateVFX);
         }
@@ -349,6 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.05 });
         vfxObserver.observe(vfxSection);
 
+        createGlowSprites();
         resizeVFX();
         initVFX();
         animateVFX();
@@ -479,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             });
-        }, { rootMargin: '400px 0px 400px 0px', threshold: 0 });
+        }, { rootMargin: '120px 0px 120px 0px', threshold: 0 });
 
         vfxVideos.forEach(v => videoObserver.observe(v));
 
@@ -627,7 +659,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCloseBtn = document.getElementById('modal-close-btn');
 
     if (vfxModal && modalVideo) {
-        const openModal = (card) => {
+        let currentBlobUrl = null;
+
+        const openModal = async (card) => {
             const videoSrc = card.getAttribute('data-video');
             const title = card.getAttribute('data-title') || '';
             const engine = card.getAttribute('data-engine') || '';
@@ -635,7 +669,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const context = card.getAttribute('data-context') || '';
             const desc = card.getAttribute('data-desc') || '';
 
-            modalVideo.src = videoSrc;
+            // Liberar blob previo si existía para optimizar memoria
+            if (currentBlobUrl) {
+                URL.revokeObjectURL(currentBlobUrl);
+                currentBlobUrl = null;
+            }
+
             modalTitle.textContent = title;
             modalDesc.textContent = desc;
             modalContext.textContent = context ? `Project: ${context}` : '';
@@ -663,6 +702,19 @@ document.addEventListener('DOMContentLoaded', () => {
             vfxModal.classList.add('active');
             document.body.style.overflow = 'hidden';
 
+            // Streaming seguro en memoria (Blob URL):
+            // Oculta el endpoint real en el DOM mostrando un blob efímero inutilizable fuera de esta sesión
+            try {
+                const response = await fetch(videoSrc);
+                if (!response.ok) throw new Error('Fetch failed');
+                const blob = await response.blob();
+                currentBlobUrl = URL.createObjectURL(blob);
+                modalVideo.src = currentBlobUrl;
+            } catch (err) {
+                // Fallback para entornos locales file://
+                modalVideo.src = videoSrc;
+            }
+
             modalVideo.play().catch(() => {});
         };
 
@@ -670,6 +722,10 @@ document.addEventListener('DOMContentLoaded', () => {
             vfxModal.classList.remove('active');
             modalVideo.pause();
             modalVideo.src = '';
+            if (currentBlobUrl) {
+                URL.revokeObjectURL(currentBlobUrl);
+                currentBlobUrl = null;
+            }
             document.body.style.overflow = '';
         };
 
@@ -762,4 +818,48 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- 13. PROTECCIÓN Y SEGURIDAD MULTIMEDIA (ANTI-THEFT) ---
+    // A) Protección anti-framing / clickjacking
+    if (window.top !== window.self) {
+        window.top.location = window.self.location;
+    }
+
+    // B) Bloqueo de menú contextual (click derecho)
+    document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // C) Bloqueo de arrastre de elementos (drag & drop)
+    document.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // D) Disuasión de atajos de inspección y descarga (F12, DevTools, Guardar página, Ver fuente)
+    window.addEventListener('keydown', (e) => {
+        // F12
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+        // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+        if (e.ctrlKey && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) {
+            e.preventDefault();
+            return false;
+        }
+        // Ctrl+U (Ver código fuente), Ctrl+S (Guardar página)
+        if (e.ctrlKey && ['u', 'U', 's', 'S'].includes(e.key)) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // E) Blindaje automático de reproductores de vídeo (elimina descarga nativa y menú)
+    document.querySelectorAll('video').forEach(video => {
+        video.setAttribute('controlsList', 'nodownload noplaybackrate');
+        video.setAttribute('disablePictureInPicture', 'true');
+        video.setAttribute('oncontextmenu', 'return false;');
+    });
 });
