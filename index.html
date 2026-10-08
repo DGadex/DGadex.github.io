@@ -226,16 +226,211 @@
     <section id="projects" class="py-24 bg-g-dark">
         <div class="max-w-screen-2xl mx-auto px-6">
 
+            <!-- --- CURRENT & FEATURED PROJECTS --- -->
             <div class="text-center mb-16 reveal">
-                <p class="text-g-gold text-xs font-bold tracking-widest uppercase mb-3">Portfolio</p>
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white">Completed Works</h2>
+                <p class="text-g-gold text-xs font-bold tracking-widest uppercase mb-3">Featured & In Development</p>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white">Current Projects</h2>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-
-                <!-- Project 1: Goblinmancer -->
+                <!-- WIP 1: GoblinMancer Reboot -->
                 <article
-                    class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end">
+                    class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-g-gold/50 transition-all duration-300">
+                        <div class="w-full aspect-video relative overflow-hidden bg-black">
+                            <!-- El Cartel (Steam Capsule Poster) -->
+                            <img src="images/goblinmancer-steam.webp" alt="GoblinMancer Steam"
+                                class="wip-poster w-full h-full object-cover transition-all duration-500 group-hover:scale-105" loading="lazy">
+                            <!-- Video Gameplay Preview (Aparece en hover / tap) -->
+                            <video src="images/goblinmancer-showcase.mp4"
+                                loop muted playsinline preload="metadata"
+                                class="wip-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none"></video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
+                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">Roguelite</span>
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Tower Defense</span>
+                            </div>
+                            <div class="wip-preview-badge absolute bottom-2 right-2 bg-black/80 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] text-gray-300 pointer-events-none flex items-center gap-1.5 border border-white/10 transition-opacity duration-300">
+                                <i class="fas fa-play text-[8px] text-g-gold"></i> Preview
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors flex items-center justify-between">
+                                    <span>GoblinMancer</span>
+                                    <span class="text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-400/40 px-2 py-0.5 rounded flex items-center gap-1">
+                                        <i class="fab fa-steam"></i> Steam
+                                    </span>
+                                </h4>
+                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                    Reimagining the classic game into a Tower-Defense Auto-Battler Roguelite. Build your fortress, raise undead armies, and unleash dark magic. In active development.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
+                                <a href="https://store.steampowered.com/app/4919720/GoblinMancer/" target="_blank"
+                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fab fa-steam text-base text-blue-400"></i> Steam Page
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- WIP 2: K-Boom! -->
+                    <article
+                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-g-gold/50 transition-all duration-300"
+                        style="transition-delay: 100ms;">
+                        <div class="w-full aspect-video relative overflow-hidden bg-black">
+                            <!-- El Cartel (Steam Capsule Poster) -->
+                            <img src="images/kboom-capsule.webp" alt="K-Boom! Steam"
+                                class="wip-poster w-full h-full object-cover transition-all duration-500 group-hover:scale-105" loading="lazy">
+                            <!-- Video Gameplay Preview (Aparece en hover / tap) -->
+                            <video src="images/kboom-showcase.mp4"
+                                loop muted playsinline preload="metadata"
+                                class="wip-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none"></video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
+                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">VFX</span>
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Puzzle</span>
+                            </div>
+                            <div class="wip-preview-badge absolute bottom-2 right-2 bg-black/80 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] text-gray-300 pointer-events-none flex items-center gap-1.5 border border-white/10 transition-opacity duration-300">
+                                <i class="fas fa-play text-[8px] text-g-gold"></i> Preview
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors flex items-center justify-between">
+                                    <span>K-Boom!</span>
+                                    <span class="text-g-red text-xs font-bold uppercase tracking-wider border border-g-red/60 px-2 py-0.5 rounded flex items-center gap-1">
+                                        <i class="fab fa-steam"></i> Demo Out
+                                    </span>
+                                </h4>
+                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                    Bomb and puzzle game where you create explosion sequences to help Camilo the chameleon. I worked on the Visual Effects (VFX). Playable demo available now!
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
+                                <a href="https://store.steampowered.com/app/4881340/KBoom/" target="_blank"
+                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fab fa-steam text-base text-blue-400"></i> Steam Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- WIP 3: Neon Rush Full -->
+                    <article
+                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-g-gold/50 transition-all duration-300"
+                        style="transition-delay: 150ms;">
+                        <div class="w-full aspect-video relative overflow-hidden bg-black">
+                            <img src="images/NeonRushProgress.jpg" alt="Neon Rush WIP"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
+                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">Racing</span>
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Physics & VFX</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors">Neon Rush (Full Game)</h4>
+                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                    The full commercial version of my Bachelor's Thesis project with an in-depth track builder tool, stylized neon shaders, and custom vehicle physics.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
+                                <a href="assets/Bachelor_Thesis_Edward_Mena.pdf" target="_blank"
+                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fas fa-file-pdf text-base"></i> Read Thesis
+                                </a>
+                                <a href="https://github.com/DGadex/Neon-Rush-TFG" target="_blank"
+                                    class="inline-flex items-center gap-2 text-gray-400 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fab fa-github text-base"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- WIP 4: UFS-07 Assetto Corsa Mod -->
+                    <article
+                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-g-gold/50 transition-all duration-300"
+                        style="transition-delay: 200ms;">
+                        <div class="w-full aspect-video relative overflow-hidden bg-black">
+                            <img src="images/FS-Teaser.jpg" alt="UFS-07 Assetto Corsa Mod"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
+                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">Assetto Corsa</span>
+                                <span class="text-g-red text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-red/50 px-2 py-0.5 rounded">Formula Student</span>
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Simulation</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors flex items-center justify-between">
+                                    <span>UFS-07 Mod</span>
+                                    <span class="text-g-red text-xs font-bold uppercase tracking-wider border border-g-red/40 px-2 py-0.5 rounded flex items-center gap-1">
+                                        <i class="fas fa-car-side"></i> Digital Twin
+                                    </span>
+                                </h4>
+                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                    Developing a high-fidelity Assetto Corsa simulation mod of the UFS-07 single-seater for the UJIMotorsport team, facilitating real-time telemetry testing, virtual setup validation, and pre-competition driver training.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
+                                <a href="formula-student.html"
+                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fas fa-flag-checkered text-base text-g-red"></i> Team & Mod Info
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- WIP 5: PINNs Neural Physics Research -->
+                    <article
+                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+                        style="transition-delay: 250ms;">
+                        <div class="w-full aspect-video relative overflow-hidden bg-black">
+                            <img src="images/pinn-research.webp" alt="PINNs Neural Physics Research"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
+                                <span class="text-purple-400 text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-purple-400/50 px-2 py-0.5 rounded">PINNs</span>
+                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">Deep Learning</span>
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Physics Engines</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors flex items-center justify-between">
+                                    <span>PINNs & Neural Physics</span>
+                                    <span class="text-purple-400 text-xs font-bold uppercase tracking-wider border border-purple-400/40 px-2 py-0.5 rounded flex items-center gap-1">
+                                        <i class="fas fa-brain"></i> AI Research
+                                    </span>
+                                </h4>
+                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                    Personal research in collaboration with external research groups, investigating Physics-Informed Neural Networks (PINNs) and deep learning models to augment real-time physics engines and video game simulation.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
+                                <a href="#contact"
+                                    class="inline-flex items-center gap-2 text-purple-300 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
+                                    <i class="fas fa-flask text-base text-g-gold"></i> Research Inquiries
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+            </div>
+
+            <!-- --- COMPLETED WORKS / ARCHIVE --- -->
+            <div class="reveal mt-12 border-t border-white/10 pt-16">
+                <div class="text-center mb-12">
+                    <p class="text-g-gold text-xs font-bold tracking-widest uppercase mb-3">Archive & Game Jams</p>
+                    <h3 class="text-3xl font-serif font-bold text-white">Completed Works</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1: Goblinmancer -->
+                    <article
+                        class="project-card reveal glass-panel overflow-hidden group relative h-[450px] flex flex-col justify-end">
                     <!-- Image Container (NECESARIO PARA EL SCRIPT DE GIF) -->
                     <div class="image-container">
                         <div class="absolute inset-0 bg-gradient-to-t from-g-black via-g-black/50 to-transparent z-10">
@@ -489,201 +684,6 @@
                         </div>
                     </div>
                 </article>
-            </div>
-
-            <!-- --- ONGOING PROJECTS --- -->
-            <div class="reveal mt-12 border-t border-white/10 pt-16">
-                <div class="text-center mb-12">
-                    <p class="text-g-gold text-xs font-bold tracking-widest uppercase mb-3">In Development</p>
-                    <h3 class="text-3xl font-serif font-bold text-white">Work in Progress</h3>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- WIP 1: GoblinMancer Reboot -->
-                    <article
-                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-g-gold/50 transition-all duration-300">
-                        <div class="w-full aspect-video relative overflow-hidden bg-black">
-                            <!-- El Cartel (Steam Capsule Poster) -->
-                            <img src="images/goblinmancer-steam.webp" alt="GoblinMancer Steam"
-                                class="wip-poster w-full h-full object-cover transition-all duration-500 group-hover:scale-105" loading="lazy">
-                            <!-- Video Gameplay Preview (Aparece en hover / tap) -->
-                            <video src="images/goblinmancer-showcase.mp4"
-                                loop muted playsinline preload="metadata"
-                                class="wip-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none"></video>
-                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
-                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">Roguelite</span>
-                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Tower Defense</span>
-                            </div>
-                            <div class="wip-preview-badge absolute bottom-2 right-2 bg-black/80 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] text-gray-300 pointer-events-none flex items-center gap-1.5 border border-white/10 transition-opacity duration-300">
-                                <i class="fas fa-play text-[8px] text-g-gold"></i> Preview
-                            </div>
-                        </div>
-                        <div class="p-6 flex flex-col justify-between flex-grow">
-                            <div>
-                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors flex items-center justify-between">
-                                    <span>GoblinMancer</span>
-                                    <span class="text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-400/40 px-2 py-0.5 rounded flex items-center gap-1">
-                                        <i class="fab fa-steam"></i> Steam
-                                    </span>
-                                </h4>
-                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                                    Reimagining the classic game into a Tower-Defense Auto-Battler Roguelite. Build your fortress, raise undead armies, and unleash dark magic. In active development.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
-                                <a href="https://store.steampowered.com/app/4919720/GoblinMancer/" target="_blank"
-                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
-                                    <i class="fab fa-steam text-base text-blue-400"></i> Steam Page
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- WIP 2: K-Boom! -->
-                    <article
-                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-g-gold/50 transition-all duration-300"
-                        style="transition-delay: 100ms;">
-                        <div class="w-full aspect-video relative overflow-hidden bg-black">
-                            <!-- El Cartel (Steam Capsule Poster) -->
-                            <img src="images/kboom-capsule.webp" alt="K-Boom! Steam"
-                                class="wip-poster w-full h-full object-cover transition-all duration-500 group-hover:scale-105" loading="lazy">
-                            <!-- Video Gameplay Preview (Aparece en hover / tap) -->
-                            <video src="images/kboom-showcase.mp4"
-                                loop muted playsinline preload="metadata"
-                                class="wip-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 pointer-events-none"></video>
-                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
-                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">VFX</span>
-                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Puzzle</span>
-                            </div>
-                            <div class="wip-preview-badge absolute bottom-2 right-2 bg-black/80 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] text-gray-300 pointer-events-none flex items-center gap-1.5 border border-white/10 transition-opacity duration-300">
-                                <i class="fas fa-play text-[8px] text-g-gold"></i> Preview
-                            </div>
-                        </div>
-                        <div class="p-6 flex flex-col justify-between flex-grow">
-                            <div>
-                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors flex items-center justify-between">
-                                    <span>K-Boom!</span>
-                                    <span class="text-g-red text-xs font-bold uppercase tracking-wider border border-g-red/60 px-2 py-0.5 rounded flex items-center gap-1">
-                                        <i class="fab fa-steam"></i> Demo Out
-                                    </span>
-                                </h4>
-                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                                    Bomb and puzzle game where you create explosion sequences to help Camilo the chameleon. I worked on the Visual Effects (VFX). Playable demo available now!
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
-                                <a href="https://store.steampowered.com/app/4881340/KBoom/" target="_blank"
-                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
-                                    <i class="fab fa-steam text-base text-blue-400"></i> Steam Demo
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- WIP 3: Neon Rush Full -->
-                    <article
-                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-g-gold/50 transition-all duration-300"
-                        style="transition-delay: 150ms;">
-                        <div class="w-full aspect-video relative overflow-hidden bg-black">
-                            <img src="images/NeonRushProgress.jpg" alt="Neon Rush WIP"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
-                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">Racing</span>
-                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Physics & VFX</span>
-                            </div>
-                        </div>
-                        <div class="p-6 flex flex-col justify-between flex-grow">
-                            <div>
-                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors">Neon Rush (Full Game)</h4>
-                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                                    The full commercial version of my Bachelor's Thesis project with an in-depth track builder tool, stylized neon shaders, and custom vehicle physics.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
-                                <a href="assets/Bachelor_Thesis_Edward_Mena.pdf" target="_blank"
-                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
-                                    <i class="fas fa-file-pdf text-base"></i> Read Thesis
-                                </a>
-                                <a href="https://github.com/DGadex/Neon-Rush-TFG" target="_blank"
-                                    class="inline-flex items-center gap-2 text-gray-400 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
-                                    <i class="fab fa-github text-base"></i> Code
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- WIP 4: UFS-07 Assetto Corsa Mod -->
-                    <article
-                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-g-gold/50 transition-all duration-300"
-                        style="transition-delay: 200ms;">
-                        <div class="w-full aspect-video relative overflow-hidden bg-black">
-                            <img src="images/FS-Teaser.jpg" alt="UFS-07 Assetto Corsa Mod"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
-                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">Assetto Corsa</span>
-                                <span class="text-g-red text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-red/50 px-2 py-0.5 rounded">Formula Student</span>
-                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Simulation</span>
-                            </div>
-                        </div>
-                        <div class="p-6 flex flex-col justify-between flex-grow">
-                            <div>
-                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-g-red transition-colors flex items-center justify-between">
-                                    <span>UFS-07 Mod</span>
-                                    <span class="text-g-red text-xs font-bold uppercase tracking-wider border border-g-red/40 px-2 py-0.5 rounded flex items-center gap-1">
-                                        <i class="fas fa-car-side"></i> Digital Twin
-                                    </span>
-                                </h4>
-                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                                    Developing a high-fidelity Assetto Corsa simulation mod of the UFS-07 single-seater for the UJIMotorsport team, facilitating real-time telemetry testing, virtual setup validation, and pre-competition driver training.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
-                                <a href="formula-student.html"
-                                    class="inline-flex items-center gap-2 text-g-gold hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
-                                    <i class="fas fa-flag-checkered text-base text-g-red"></i> Team & Mod Info
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- WIP 5: PINNs Neural Physics Research -->
-                    <article
-                        class="wip-card reveal glass-panel flex flex-col overflow-hidden group h-full border border-white/10 hover:border-purple-500/50 transition-all duration-300"
-                        style="transition-delay: 250ms;">
-                        <div class="w-full aspect-video relative overflow-hidden bg-black">
-                            <img src="images/pinn-research.webp" alt="PINNs Neural Physics Research"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-g-black/80 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
-                                <span class="text-purple-400 text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-purple-400/50 px-2 py-0.5 rounded">PINNs</span>
-                                <span class="text-g-gold text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-g-gold/50 px-2 py-0.5 rounded">Deep Learning</span>
-                                <span class="text-white text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded">Physics Engines</span>
-                            </div>
-                        </div>
-                        <div class="p-6 flex flex-col justify-between flex-grow">
-                            <div>
-                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors flex items-center justify-between">
-                                    <span>PINNs & Neural Physics</span>
-                                    <span class="text-purple-400 text-xs font-bold uppercase tracking-wider border border-purple-400/40 px-2 py-0.5 rounded flex items-center gap-1">
-                                        <i class="fas fa-brain"></i> AI Research
-                                    </span>
-                                </h4>
-                                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                                    Personal research in collaboration with external research groups, investigating Physics-Informed Neural Networks (PINNs) and deep learning models to augment real-time physics engines and video game simulation.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-4 border-t border-white/5 flex gap-4">
-                                <a href="#contact"
-                                    class="inline-flex items-center gap-2 text-purple-300 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors">
-                                    <i class="fas fa-flask text-base text-g-gold"></i> Research Inquiries
-                                </a>
-                            </div>
-                        </div>
-                    </article>
                 </div>
             </div>
 
